@@ -1,0 +1,61 @@
+<section class="top-brands-wrap clearfix">
+ 
+   
+   
+   
+   
+    <div class="container">
+        <div _ngcontent-jsn-c125="" class="daily-deals-wrap">
+            <div _ngcontent-lyb-c125="" class="daily-deals-header clearfix">
+
+           <h4 _ngcontent-lyb-c125="" class="section-title"><b>Top Brands</b>
+           </h4></div>              
+       </div>
+     
+     <!--  <ngb-carousel>
+        <ng-template ngbSlide *ngFor='let arr of arrSlider; let i=index'>*
+            <img [src]="arr.logo.path" style="width: 120px;"  alt="Random first slide" class="width-100">
+             
+        </ng-template> 
+    </ngb-carousel> -->
+
+
+    <ngx-slick-carousel  #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let image of arrSlider" class="slide">
+          <img src="{{ image.logo.path }}" width="100%">
+        </div>
+      </ngx-slick-carousel> 
+
+   
+<!-- 
+    <mat-carousel *ngIf="slides.length>0"
+    timings="250ms ease-in"
+    [autoplay]="false"
+    interval="5000"
+    color="accent"
+    maxWidth="100%"
+    
+   
+    slideHeight="160px"
+    [loop]="true"
+    [hideArrows]="false"
+    [hideIndicators]="true"
+    [useKeyboard]="true"
+    [useMouseWheel]="false"
+    orientation="ltr">
+
+    <mat-carousel-slide
+        #matCarouselSlide
+        *ngFor="let slide of slides; let i = index"
+        [image]="slides1[i].image"
+        overlayColor="#fff"
+        [hideOverlay]="true">
+        
+
+
+    </mat-carousel-slide>
+
+</mat-carousel> -->
+
+     </div></section>
+    

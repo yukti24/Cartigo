@@ -1,0 +1,241 @@
+.breadcrumb {
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: #e9ecef;
+    border-radius: .25rem;
+
+    margin: 23px 0 0;
+    padding: 0;
+    background: #fff;
+}
+
+.breadcrumb ul {
+    margin-left: -11px;
+}
+
+.breadcrumb ul>li {
+    font-size: 15px;
+    line-height: 26px;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.breadcrumb ul>li>a {
+    color: #191919;
+}
+
+.breadcrumb ul>li:after {
+    position: absolute;
+    content: "\F105";
+    font-family: Line Awesome Free;
+    font-weight: 900;
+    font-size: 12px;
+    right: -7px;
+    top: 1px;
+    color: #191919;
+}
+
+.breadcrumb ul>li.active, .breadcrumb ul>li.active:after {
+    color: #a6a6a6;
+}
+
+.order-details-wrap {
+    margin-top: 50px;
+}
+
+.order-details-top {
+    margin-bottom: 39px;
+}
+
+.order-details-wrap .section-title {
+    margin-bottom: 34px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 50px;
+    border-bottom: 2px solid #0068e1;
+    border-bottom: 2px solid var(--color-primary);
+}
+
+.order-information {
+    margin-bottom: 38px;
+}
+
+.order-information h4 {
+    margin-bottom: 18px;
+}
+
+.order-information .order-information-list li {
+    display: -webkit-box;
+    display: flex;
+    margin-bottom: 9px;
+}
+
+.order-information .order-information-list label {
+    font-weight: 500;
+    min-width: 165px;
+    margin-bottom: 0;
+    padding-right: 10px;
+}
+
+.order-information .order-information-list span {
+    color: #6e6e6e;
+    word-break: break-all;
+}
+
+.order-billing-details {
+    margin-bottom: 33px;
+}
+
+.order-billing-details h4, .order-shipping-details h4 {
+    margin-bottom: 18px;
+}
+
+.order-billing-details address>span, .order-shipping-details address>span {
+    display: block;
+    margin-bottom: 9px;
+    color: #6e6e6e;
+}
+
+.order-details-middle {
+    margin-bottom: 25px;
+}
+
+.order-details-middle .table-responsive {
+    padding-bottom: 4px;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+}
+
+.order-details-table tbody td:first-child {
+    padding: 25px 20px 11px!important;
+}
+
+.order-details-table .product-name {
+    display: inline-block;
+    color: #191919;
+}
+
+.order-details-bottom {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.order-details-bottom .order-summary-list {
+    width: 300px;
+}
+
+.order-summary-list li {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+
+.order-summary-list label {
+    margin-bottom: 0;
+    padding-right: 20px;
+
+}
+
+.order-details-bottom .order-summary-list .price-amount {
+    font-weight: 500;
+}
+
+.order-summary-total {
+    font-size: 18px;
+    font-weight: 700;
+    display: -webkit-box;
+    display: flex;
+    margin-top: 21px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-top: 1px solid #ebebeb;
+}
+
+.order-details-bottom .order-summary-total {
+    width: 300px;
+    margin-top: 24px;
+    padding-bottom: 0;
+}
+
+.order-details-table .product-price {
+    color: #191919;
+}
+
+.order-details-bottom .order-summary-list .price-amount {
+    font-weight: 700;
+}
+
+.order-summary-list label {
+    margin-bottom: 0;
+    padding-right: 20px;
+}
+
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+@media screen and (max-width: 880px){
+    .order-details-table thead {
+        display: none;
+    }
+    
+    .order-details-table tbody td {
+        vertical-align: top;
+        display: block;
+    }
+    .order-details-table td>label {
+        width: 90px;
+        min-width: 90px;
+        margin-bottom: 0;
+        padding-right: 5px;
+        color: #6e6e6e;
+        white-space: pre-wrap;
+    }
+    
+    .order-details-table .product-price {
+        display: -webkit-inline-box;
+        display: inline-flex;
+    }
+    
+    }
+
+    .product-options {
+        margin: 4px 0 1px;
+    }
+
+    .product-options li {
+        font-size: 13px;
+        margin-right: 5px;
+        color: #a6a6a6;
+    }
+
+    .product-options label {
+        margin-bottom: 0;
+        color: #6e6e6e;
+    }
+    

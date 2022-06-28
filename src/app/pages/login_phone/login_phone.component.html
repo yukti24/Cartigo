@@ -1,0 +1,32 @@
+<section class="form-wrap login-wrap">
+  <div class="container"><div class="form-wrap-inner login-wrap-inner"><h2>Login</h2> 
+    <form class="row form_main" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <input type="hidden" name="_token" value="qfqstD0kbmloaHEDgu3TFoVwSd9XcB6yKWbkAepd"> 
+  <div *ngIf="!isVerifyOtp" class="form-group"><label for="email">Phone<span>*</span></label> 
+  <input type="number" formControlName="phone" maxlength="10"  class="form-control" 
+   [ngClass]="{ 'is-invalid': submitted && pherr }">
+  <div *ngIf="submitted && pherr" class="invalid-feedback">
+    <div *ngIf="pherr">Phone is invalid</div>
+   
+</div>
+  </div> 
+  <div *ngIf="isVerifyOtp" class="form-group"><label for="otp">Enter OTP {{otpgen}}<span>*</span></label> 
+  <input type="number"  maxlength="4"  id="otp" [(ngModel)]="otpval" [ngModelOptions]="{standalone: true}" class="form-control" autocomplete="off"
+   [ngClass]="{ 'is-invalid': submitted && otperr }" >
+  <div *ngIf="submitted && otperr" class="invalid-feedback">
+    <div *ngIf="otperr">Otp is invalid</div>
+    
+</div>
+</div>
+<div *ngIf="isreferal" class="form-group"><label for="otp">Enter Referal Code <span></span></label> 
+  <input type="text"  id="otp" [(ngModel)]="refval" [ngModelOptions]="{standalone: true}" class="form-control" autocomplete="off"
+   >
+ 
+</div>
+            
+       <input name="submit" class="btn btn-primary" accesskey="l" value="Sign In" tabindex="3" type="submit" />
+  </form> 
+</div></div></section>
+
+<app-footer1></app-footer1>

@@ -1,0 +1,39 @@
+.banner-wrap {
+    margin-top: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.banner:after, .banner:before {
+    position: absolute;
+    content: "";
+   
+    width: 100%;
+    background: hsla(0,0%,100%,.3);
+    opacity: 0;
+    z-index: 1;
+}
+
+.banner:before {
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.banner>img {
+    width: 100%;
+    border-radius: 2px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .8s ease;
+    transition: .8s ease;
+}
+
+.banner:after {
+    left: 50%;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}

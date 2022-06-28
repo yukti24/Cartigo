@@ -1,0 +1,43 @@
+.account-wrap .account-left {
+    min-width: 0;
+}
+
+.list-inline, .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.account-sidebar li a {
+    font-size: 16px;
+    line-height: 36px;
+    position: relative;
+    display: inline-block;
+    color: #191919;
+    padding: 8px 0 8px 28px;
+}
+
+.account-sidebar li.active a {
+    font-weight: 500;
+    color: #0068e1;
+    color: #002b5c;
+}
+
+.account-sidebar li a>i {
+    font-size: 24px;
+    vertical-align: top;
+    margin: 5px 12px 0 0;
+    color: #6e6e6e;
+}
+
+.account-sidebar li.active a:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 17px;
+    height: 15px;
+    width: 7px;
+    background: #0068e1;
+    background: #002b5c;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}

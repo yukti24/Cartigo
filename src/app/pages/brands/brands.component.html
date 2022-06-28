@@ -1,0 +1,14 @@
+<section class="all-brands-wrap">
+  <div class="container">
+    <div class="all-brands">
+      <div class="all-brands-inner">
+        <ngx-spinner  bdColor = "#eeeeee73" size = "default" color = "#000" type = "ball-clip-rotate" [fullScreen] = "false"><p style="color: black" >  Loading... </p></ngx-spinner>
+
+        <div  *ngFor="let arr of arrBrands" class="col-lg-3 col-md-6 col-9">
+          <a href="javascript:void(0)" (click)="getBrandData(arr.slug,arr.name)" class="brand-image">
+            <img *ngIf="arr.files.length>0" [src]="arr.files[0].path" 
+            alt="brand image"></a></div>
+
+      </div></div></div></section>
+
+      <app-footer1></app-footer1>

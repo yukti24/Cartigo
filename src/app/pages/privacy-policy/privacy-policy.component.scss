@@ -1,0 +1,48 @@
+.custom-page-wrap {
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 991px){
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+    width: 100%;
+   
+    margin-right: auto;
+    margin-left: auto;
+}
+}
+
+.custom-page-content h1, .custom-page-content h2, .custom-page-content h3, .custom-page-content h4, .custom-page-content h5, .custom-page-content h6 {
+    margin-bottom: 14px;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 14px;
+    color: #191919;
+    font-family: Rubik,Arial,Helvetica,sans-serif;
+    font-weight: 500;
+}
+
+.custom-page-content p {
+    line-height: 23px;
+    color: #6e6e6e;
+    font-size: 15px;
+}
+
+.custom-page-content h1, .custom-page-content h2, .custom-page-content h3, .custom-page-content h4, .custom-page-content h5, .custom-page-content h6 {
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+

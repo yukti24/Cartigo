@@ -1,0 +1,97 @@
+
+
+<ul class="sidebar-menu-tab nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" data-target="#home">Menu</a>
+    </li>
+   <!--  <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" data-target="#menu1">Categories</a>
+    </li>  -->
+   
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane container active" id="home">
+       
+            <ul class="list-inline sidebar-menus">
+                <li *ngFor="let navItem of arrPrimaryMenu" (click)="onNavigationSelection(navItem)">
+                 
+                <a href="javascript:void(0);" (click)="onNavigationSelection(navItem)" >
+                  {{ navItem.name }}
+                </a>
+                </li>
+                <li (click)="triggerModal(modalData)">
+                  <a href="javascript:void(0);"  class="menu-item">
+                   
+                 Share App
+              </a></li>
+            </ul>
+       
+    </div>
+    <div class="tab-pane container fade" id="menu1">
+      <div id="category-menu" class="tab-pane active"><ul class="list-inline sidebar-menus">
+        <ul id="accordion" class="accordion" >
+       
+        <li *ngFor="let navItem of arrCategoryMenu; let i = index" [class.active]="selectedMenu == i" class="dropdown multi-level">
+          <a href="javascript:void(0);" (click)="toggle(i)" class="menu-item menu">
+                
+            {{ navItem.name }}
+     </a><i class="las la-angle-right"></i>
+     <ul class="submenu" *ngIf="selectedMenu == i" #submenu 
+     >
+       <li *ngFor="let submenu of navItem.subMenus">
+         <a href="javascript:void(0)" (click)="onNavigationSelection1(submenu)" >{{ submenu.name }}</a>
+       </li>
+     </ul>
+   </li> 
+   </ul>
+     <li class="more-categories hide"><a routerLink="/categories" class="menu-item"><span class="menu-item-icon"><i class="las la-plus-square"></i></span>
+
+         All Categories
+     </a></li></ul></div>
+    </div>
+    <div class="tab-pane container fade" id="menu2">...</div>
+  </div>
+
+
+  <ng-template #modalData let-modal>
+    <div padding class="mainContent">
+      <div no-margin margin-top class="feedbackCard">
+        <ion-row class="textCenter">
+          <div>
+              You can share Via :-
+          </div>
+        </ion-row>
+      <div class="logoList">
+        <div class="row1" *ngFor="let item of sharingList">
+          
+              <div class="col-lg" (click)="shareVia(item)">
+                  <img class="socialLogo" [src]="item.logo" />
+              </div>
+        </div>
+      </div>    
+      <ion-button class="btn" (click)="modal.close('Save click')" fill="clear">
+        Close
+      </ion-button>
+      </div>
+      </div>
+
+  </ng-template>
+ 
+  <!-- 
+  <ul id="accordion" class="accordion" >
+    <li *ngFor="let menu of arrCategoryMenu; let i = index" 
+    
+      [class.active]="selectedMenu == i">
+      <div class="menu" (click)="toggle(i)">
+        <i [class]="menu.iconClass"></i>
+        {{ menu.name }}
+        <i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu" *ngIf="selectedMenu == i" #submenu 
+      [style.height.px]="menu.hasSubMenus ? submenu.scrollHeight : 0" >
+        <li *ngFor="let submenu of menu.subMenus">
+          <a href="javascript:void(0)" (click)="onNavigationSelection1(submenu)" >{{ submenu.name }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul> -->

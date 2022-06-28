@@ -1,0 +1,115 @@
+
+  <div class="header-search">
+      <form class="search-form" >
+        
+          <div (click)="showsearchformm()" class="header-search-sm">
+              <i class="las la-search"></i>
+          </div>
+      </form>
+
+    
+  </div>
+
+  <div [class]="headerformcls">
+      <form class="search-form" >
+          <div (click)="hidesearchformm()" class="btn-close1">
+              <i class="las la-arrow-left"></i>
+          </div>
+
+          <!-- Cannot use v-model due to a bug. See https://github.com/vuejs/vue/issues/8231 -->
+          <input
+              type="text"
+              name="query"
+              class="form-control search-input-sm"
+              autocomplete="off"
+              placeholder="Search for Products"
+              [(ngModel)]="srchkey" (keyup)="valuechange()" 
+             
+             
+          >
+
+          <button type="submit" class="btn btn-search">
+              <i class="las la-search"></i>
+          </button>
+      </form>
+  </div>
+
+   <div class="search-suggestions"  *ngIf="arrSearch.length !== 0">
+      <div class="search-suggestions-inner custom-scrollbar" ref="searchSuggestionsInner">
+          <div class="category-suggestion" *ngIf="arrSearch.categories.length !== 0">
+              <h6 class="title">Category Suggestion</h6>
+
+              <ul class="list-inline category-suggestion-list">
+                  <li
+                      *ngFor="let category of arrSearch.categories; let i=index"
+                      key="category.slug"
+                      class="list-item"
+                      [class.active]="selectedCategory === i" 
+                      ref="category.slug"
+                     
+                  >
+                      <a
+                          href="javascript:void(0)"
+                          class="single-item"
+                        
+                          (click)="gotoCategory(category)"
+                      >{{category.name}}
+                      </a>
+                  </li>
+              </ul>
+          </div>
+
+         <div *ngIf="arrSearch.products.length !== 0" class="product-suggestion">
+              <h6 class="title">Product Suggestion</h6>
+
+              <ul class="list-inline product-suggestion-list">
+                  <li
+                      *ngFor=" let product of arrSearch.products"
+                      key="product.slug"
+                      class="list-item"
+                     
+                      ref="product.slug"
+                      
+                  >
+                      <a href="javascript:void(0)" class="single-item" (click)="gotoProduct(product.slug)">
+                          <div class="product-image">
+                              <img
+                                  [src]="product.base_image.path"
+                                  [class]="{ 'image-placeholder': ! hasBaseImage(product) }"
+                                  alt="product image"
+                              >
+                          </div>
+
+                          <div class="product-info">
+                              <div class="product-info-top">
+                                  <h6 class="product-name" >
+                                    
+                                      <div [innerHtml]="product.name | safe: 'html'">
+</div>
+                                  </h6>
+
+                                  <ul class="list-inline product-badge" *ngIf="product.is_out_of_stock">
+                                      <li class="badge badge-danger">Out of Stock</li>
+                                  </ul>
+                              </div>
+
+                              <div class="product-price" [innerHtml]="product.formatted_price | safe: 'html'">
+                                
+                              </div>
+                          </div>
+                      </a>
+                  </li>
+              </ul>
+
+              <a
+                  *ngIf="arrSearch.remaining !== 0"
+                  href="javascript:void(0)"
+                  (click)="gotoProducts()"
+                  class="more-results"
+              >
+                  {{ arrSearch.remaining }} more results
+              </a>
+          </div>
+      </div>
+  </div> 
+ 

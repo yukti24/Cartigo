@@ -1,0 +1,60 @@
+
+<section  class="account-wrap"><div class="container">
+ 
+  <div class="account-wrap-inner">
+    <app-user-menu type="coupon" ></app-user-menu>
+
+
+<div  *ngIf="iscoupons" class="coupon-card">
+  <div>
+    <ngx-spinner  bdColor = "#eeeeee73" size = "default" color = "#000" type = "ball-clip-rotate" [fullScreen] = "false"><p style="color: black" >  Loading... </p></ngx-spinner>
+
+    <div
+      class="coupon-off-component sprites-couponBackGroundImage sprites-mymyntraCouponSprite"
+    >
+      <div class="coupon-amount">
+        <ng-container *ngIf="!arrCoupon.ispercent">
+         Rs
+                </ng-container>
+        {{arrCoupon.amount}} <ng-container *ngIf="arrCoupon.ispercent">
+  %
+        </ng-container>
+        
+     
+      </div>
+      <div class="coupon-offText">OFF</div>
+    </div>
+    <div class="coupon-info">
+      <div class="coupon-purchase-info">
+        <span class="coupon-label"> On minimum purchase of</span
+        ><span
+          ><!-- react-text: 75 -->
+          Rs. {{arrCoupon.minpurchase}}
+         </span
+        >
+      </div>
+      <div>
+        <span class="coupon-label"> Code: </span
+        ><span class="coupon-coupon-code">
+          {{arrCoupon.name}}
+          </span
+        >
+      </div>
+    </div>
+  </div>
+  <div class="coupon-coupon-detail">
+    <span>Expiry: </span><span class="coupon-expiry-date">{{arrCoupon.expirydate}}</span
+    ><span>
+      11:59:00 P.M
+      You can apply this coupon {{arrUser.refcouponcnt}} time(s).</span
+    ><span class="coupon-details"
+      >
+      </span
+    >
+  </div>
+</div>
+<div *ngIf="!iscoupons" class="empty-message">
+  <h3>You don't have any coupons.</h3></div>
+</div></div></section>
+
+<app-footer1></app-footer1>

@@ -1,0 +1,210 @@
+
+/* fonts */
+
+$primary-font: 'Rubik', Arial, Helvetica, sans-serif;
+
+/* default theme colors */
+
+$color-default: #0068e1;
+$color-default-hover: #0055b8;
+$color-default-transparent: rgba(0, 85, 184, 0.8);
+$color-default-transparent-lite: rgba(0, 85, 184, 0.3);
+
+/* colors */
+
+$color-white: #ffffff;
+$color-white-lite: #f2f4f5;
+$color-white-dark: #f9f9f9;
+$color-white-transparent: rgba(255, 255, 255, 0.7);
+$color-black: #191919;
+$color-gray: #6e6e6e;
+$color-gray-lite: #ebebeb;
+$color-gray-dark: #a6a6a6;
+$color-red: #e23e1d;
+$color-green: #1eb48e;
+$color-info: #247cc6;
+$color-yellow: #ffb136;
+$border-color: #e1e1e1;
+$border-color-lite: #e5e5e5;
+
+/* screen size */
+
+$xl: 1199px;
+$lg: 991px;
+$md: 767px;
+$sm: 576px;
+
+/* miscellaneous */
+
+$radius-default: 2px;
+$transition-default: 150ms ease-in-out;
+$transition-primary: 200ms ease-in-out;
+
+
+.sidebar-cart-middle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 155px;
+    padding: 0 30px;
+
+    &.empty {
+        bottom: 0;
+        overflow: visible;
+    }
+}
+
+.sidebar-cart-items-wrap {
+    padding: 5px 0;
+    background: $color-white;
+    overflow: scroll;
+    height: 100%;
+}
+
+.sidebar-cart-item {
+    position: relative;
+    display: flex;
+    padding: 25px 0 21px;
+    border-bottom: 1px solid $color-white-lite;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .product-image {
+        height: 46px;
+        width: 46px;
+        min-width: 46px;
+        border-radius: $radius-default;
+        overflow: hidden;
+
+        .image-placeholder {
+            height: 25px;
+            width: 25px;
+        }
+
+
+    }
+
+    .product-image>img {
+        max-height: 100%;
+        max-width: 100%;
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+    }
+
+    .product-info {
+        margin: 0 30px 0 20px;
+        min-width: 0;
+
+        .product-name {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 24px;
+            display: block;
+            color: $color-black;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            &:hover {
+                color: $color-default;
+                color: var(--color-primary);
+            }
+        }
+
+        .product-quantity {
+            font-size: 13px;
+            line-height: 26px;
+            color: #666666;
+        }
+    }
+
+    .remove-cart-item {
+        position: absolute;
+        top: 16px;
+        right: -8px;
+        
+
+        .btn-remove {
+            font-size: 14px;
+            opacity: 0.6;
+            border: 0;
+            background-color: transparent;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+.sidebar-cart-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: $color-white;
+
+    .sidebar-cart-subtotal {
+        display: flex;
+        margin: 0 30px;
+        padding: 25px 0;
+        justify-content: space-between;
+        border-top: 1px solid $border-color-lite;
+
+        > span {
+            font-weight: 500;
+            color: $color-default;
+            color: var(--color-primary);
+        }
+    }
+
+    .sidebar-cart-actions {
+        display: flex;
+        padding: 20px 30px;
+        background: $color-white-lite;
+        justify-content: space-between;
+    }
+}
+
+.empty-message {
+    position: absolute;
+    left: 0;
+    
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    padding: 40px 0;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    text-align: center;
+}
+.empty-message svg {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 22px;
+}
+
+.btn-default {
+    font-weight: 500;
+    padding: 6px 24px;
+    background: transparent;
+    border: 1px solid #0068e1;
+    border: 1px solid var(--color-primary);
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #002b5c;
+    border-color: #002b5c;
+    width: auto;
+}

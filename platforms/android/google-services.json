@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "880628991732",
+    "project_id": "cartigo-332307",
+    "storage_bucket": "cartigo-332307.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880628991732:android:bd643e0ea2fc1d71f940a1",
+        "android_client_info": {
+          "package_name": "com.cartigo.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880628991732-0a0a59sltl279h9j12ok1j2cpqbbk6qb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartigo.app",
+            "certificate_hash": "ebe503d740ef43c14d8aed6e969606c4e6d0e50e"
+          }
+        },
+        {
+          "client_id": "880628991732-tsjaeps1j3vks2a89iir585se9k7j9d5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cartigo.app",
+            "certificate_hash": "9ddcafad8a09c8ec9cb80532a0ba83aa702dac16"
+          }
+        },
+        {
+          "client_id": "880628991732-is1o940vck28durap8sdvvalpavc332u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbsgaJiRIJDOeUsNfYxEyGlM3dcpBpFGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880628991732-is1o940vck28durap8sdvvalpavc332u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "880628991732-46qq0smf4in59m5260o3akj0an93ojq3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.cartigo.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

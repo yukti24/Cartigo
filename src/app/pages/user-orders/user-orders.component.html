@@ -1,0 +1,57 @@
+
+<section class="account-wrap"><div class="container">
+ 
+  <div class="account-wrap-inner">
+    <app-user-menu type="orders" ></app-user-menu>
+
+<div class="account-right">
+  <div class="panel-wrap"><div class="panel">
+    <div class="panel-header"><h4>My Orders</h4> <a href="javascript:void(0)">
+  View All
+</a></div>
+ <div class="panel-body">
+  <ngx-spinner  bdColor = "#eeeeee73" size = "default" color = "#000" type = "ball-clip-rotate" [fullScreen] = "false"><p style="color: black" >  Loading... </p></ngx-spinner>
+
+   <div *ngIf="arrOrder.data != undefined" class="table-responsive">
+
+  
+   <table class="table table-borderless my-orders-table">
+     <thead>
+       <tr><th>ORDER ID</th> 
+        <th>DATE</th> <th>STATUS</th>
+         <th>TOTAL</th> <th>ACTION</th></tr>
+        </thead> <tbody>
+          <tr *ngFor="let order of arrOrder.data">
+            <td>
+    {{order.id}}
+  </td> <td>
+    {{ order.created_at | date: "mediumDate" }}
+
+    
+    
+  </td> <td>
+    <span class="badge badge-danger">
+          {{order.status}}
+      </span></td> 
+      <td>
+     {{order.total.formatted}}
+  </td>
+   <td><a href="javascript:void(0)" (click)="gotoOrdeerDetsil(order.id)" class="btn btn-view"><i class="las la-eye"></i>
+          View
+      </a>
+      <a href="javascript:void(0)" *ngIf="order.status=='pending'" (click)="CancelOrderDetail(order.id)" class="btn btn-view"><i class="las la-trash"></i>
+        Cancel
+    </a>
+    </td></tr> 
+   </tbody></table></div>
+   <div *ngIf="arrOrder.data==undefined" class="empty-message">
+    <h3>You don't have any orders.</h3></div>
+  
+  </div></div> 
+    
+    
+    </div></div>
+
+      </div>  </div></section>
+
+      <app-footer1></app-footer1>

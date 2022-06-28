@@ -1,0 +1,82 @@
+
+<div class="container" style="position: relative">
+  
+  <!-- <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link " data-toggle="tab" data-target="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#menu1">Menu 1</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#menu2">Menu 2</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#menu3">Menu 3</a></li>
+    </ul> -->
+
+    <div class="tab-products-header clearfix">
+      <ul class="nav nav-tabs  float-left">
+        <li *ngFor="let tab of arrTabs; let i=index" [class.active]="selectedTab === i" class="nav-item  ">
+        <a class="tab-item nav-link " [class.active]="selectedTab === i" (click)="getproductgridproducts(i)"  data-toggle="tab" data-target="#home">{{tab}}</a>
+  </li>
+ <!--  <li class="nav-item">
+    <a class="nav-link "  (click)="getproductgridproducts(2)"  data-toggle="tab" data-target="#home">Special</a>
+  </li><li class="nav-item">
+    <a class="nav-link " (click)="getproductgridproducts(3)"  data-toggle="tab" data-target="#home"> New Arrivals</a>
+  </li><li class="nav-item">
+    <a class="nav-link " (click)="getproductgridproducts(4)"  data-toggle="tab" data-target="#home">Latest</a>
+  </li> -->
+
+</ul></div>
+
+    </div>
+<div style="width: 100%;
+overflow: scroll;position: relative;
+">
+<ngx-spinner bdColor = "white" size = "default" color = "#fff" type = "ball-scale-multiple" [fullScreen] = "false"><p style="color: white" > Loading... </p></ngx-spinner>
+
+ <table class="table table-bordered table-striped table-hover">
+
+  <tbody>
+  <tr >
+      <td *ngFor="let prod of arrSlider">
+        <div class="product-card "  style="width: 157px;">
+
+          <div class="product-card-top"><a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+            class="product-image" tabindex="0">
+            <img [src]="prod.base_image.path"
+            alt="product image" class="">
+          </a> <div class="product-card-actions"><button title="Wishlist"
+              class="btn btn-wishlist" tabindex="0"><i class="la-heart lar"></i></button> <button
+              title="Compare" class="btn btn-compare" tabindex="0"><i class="las la-random"></i></button></div>
+              <ul class="list-inline product-badge">
+              <li class="badge badge-danger" *ngIf="prod.is_out_of_stock">
+              Out of stock
+            </li>
+
+            <li class="badge badge-primary" *ngIf="prod.is_new">
+              New
+            </li>
+
+            <li class="badge badge-success" *ngIf="prod.has_percentage_special_price">
+                -{{ prod.special_price_percent }}%
+            </li>
+            </ul>
+            
+            </div>
+               <div class="product-card-middle"><div class="product-rating"><div class="back-stars"><i class="las la-star"></i>
+                 <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                  <i class="las la-star"></i> <div class="front-stars" style="width: 0%;"><i class="las la-star"></i>
+                    <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                    <i class="las la-star"></i></div></div> <span class="rating-count">(0)</span></div>
+                    <a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+                    class="product-name" tabindex="0"><h6>{{prod.name}}</h6></a>
+                    <div class="product-price product-price-clone">{{prod.selling_price.formatted}}</div></div> <div class="product-card-bottom">
+                      <div class="product-price">{{prod.selling_price.formatted}}</div>
+                       <button class="btn btn-primary btn-add-to-cart" 
+                      tabindex="0"><i class="las la-cart-arrow-down"></i>
+            ADD TO CART
+        </button></div></div>
+
+      </td>
+
+  </tr>
+  </tbody>
+</table>
+</div>
+
+

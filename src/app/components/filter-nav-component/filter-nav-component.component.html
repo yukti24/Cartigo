@@ -1,0 +1,17 @@
+<div class="sidebar-cart-middle custom-scrollbar"><div class="sidebar-cart-items-wrap">
+  
+  <div class="filter-section-inner custom-scrollbar">
+    <div class="filter-section"><h6>Price</h6> <div class="filter-price">
+   
+      <ngx-slider (highValueChange)="gethighvalue()"  (valueChange)="getlowvalue()"  [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider> 
+
+    </div></div> 
+    <div class="form-group m-r-20">
+      
+      <select name="brandSelect[]" id="brandSelect" (change)="getBrandVal($event.target.value)" class="form-control  arrow-black">
+        <option value="" selected="selected">Select Brand</option>
+         <option *ngFor="let brand of arrBrand" [value]="brand.slug">
+   {{brand.name}}
+</option> </select></div> </div>
+  
+  </div> </div>

@@ -1,0 +1,41 @@
+<section class="form-wrap login-wrap">
+  <div class="container"><div class="form-wrap-inner login-wrap-inner"><h2>Login</h2> 
+    <form class="row form_main" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <input type="hidden" name="_token" value="qfqstD0kbmloaHEDgu3TFoVwSd9XcB6yKWbkAepd"> 
+  <div class="form-group"><label for="email">Email<span>*</span></label> 
+  <input type="text" formControlName="email"  class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+    <div *ngIf="f.email.errors.required">Email is required</div>
+    <div *ngIf="f.email.errors.pattern">enter valid email</div>
+
+</div>
+  </div> 
+  <div class="form-group"><label for="password">Password<span>*</span></label> 
+  <input type="password" formControlName="password"  class="form-control" autocomplete="off"
+   [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+    <div *ngIf="f.password.errors.required">Email is required</div>
+    
+</div>
+</div>
+ 
+   <a href="javascript:void(0)" routerLink="/reset" class="forgot-password">
+   forgot password?
+   </a>              
+       <input name="submit" class="btn btn-primary" accesskey="l" value="Sign In" tabindex="3" type="submit" />
+  </form> 
+<span class="sign-in-with">Or, Continue With</span>
+ <ul class="list-inline social-login"><li>
+   <a href="javascript:void(0)" (click)="loginFB()" title="Facebook" class="facebook">
+  <i class="lab la-facebook-f"></i></a></li> <li>
+   <a href="javascript:void(0)" (click)="doLogin()"  title="Google" class="google">
+  <i class="lab la-google"></i></a></li></ul> 
+  <span class="have-an-account">
+  Don't Have an Account?
+  </span> 
+  <a routerLink="/register" class="btn btn-default btn-create-account">
+CREATE ACCOUNT
+</a></div></div></section>
+
+<app-footer1></app-footer1>

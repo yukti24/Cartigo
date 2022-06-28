@@ -1,0 +1,238 @@
+
+<section class="vertical-products-wrap">
+
+  <div id="snackbar" [class.show]="isAddtocart"  >Product added to cart</div>
+
+  <div class="container">
+  <div class="row" style="position: relative;">
+
+    <div class="col-xl-6 col-lg-18">
+    <div class="daily-deals-wrap">
+    <div class="daily-deals-header clearfix">
+      <h4 class="section-title">Best <b>Deals</b></h4>
+</div>
+<div class="daily-deals slick-initialized slick-slider">
+  <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 328px; transform: translate3d(0px, 0px, 0px);">
+   <app-flash-saleproduct></app-flash-saleproduct>
+
+</div></div></div>
+
+    </div></div>
+
+
+    <ngx-spinner name="spinner3" bdColor = "#eeeeee73" size = "default" color = "#fff" type="ball-scale-multiple" [fullScreen] = "false"><p style="color: #000" > Loading... </p></ngx-spinner>
+
+
+<div class="col-xl-4 col-lg-6 pad-right"><div class="vertical-products">
+  <div class="vertical-products-header"><h4 class="section-title">{{image1}}</h4></div>
+  <div class="vertical-products-slider slick-initialized slick-slider">
+
+<div class="slick-list draggable">
+      <div style="width: 100%;
+      overflow: scroll;position: relative;
+      ">
+ 
+ <table class="table table-bordered table-striped table-hover">
+
+  <tbody>
+  <tr >
+      <td *ngFor="let prod of arrSlider">
+        <div class="product-card "  style="width: 157px;">
+
+          <div class="product-card-top"><a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+            class="product-image" tabindex="0">
+          <img [src]="prod.base_image.path"
+            alt="product image" class=""> 
+          </a> <div class="product-card-actions"><button title="Wishlist"
+              class="btn btn-wishlist" tabindex="0"><i class="la-heart lar"></i></button> <button
+              title="Compare" class="btn btn-compare" tabindex="0"><i class="las la-random"></i></button></div>
+             
+              <ul class="list-inline product-badge">
+                <li class="badge badge-danger" *ngIf="prod.is_out_of_stock">
+                Out of stock
+              </li>
+  
+              <li class="badge badge-primary" *ngIf="prod.is_new">
+                New
+              </li>
+  
+              <li class="badge badge-success" *ngIf="prod.has_percentage_special_price">
+                  -{{ prod.special_price_percent }}%
+              </li>
+              </ul>
+            
+            </div>
+               <div class="product-card-middle"><div class="product-rating"><div class="back-stars"><i class="las la-star"></i>
+                 <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                  <i class="las la-star"></i> <div class="front-stars" style="width: 0%;"><i class="las la-star"></i>
+                    <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                    <i class="las la-star"></i></div></div> <span class="rating-count">(0)</span></div>
+                    <a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+                    class="product-name" tabindex="0"><h6>{{prod.name}}</h6></a>
+                    <div class="product-price product-price-clone">{{prod.selling_price.formatted}}</div></div> <div class="product-card-bottom">
+                      <div class="product-price">{{prod.selling_price.formatted}}</div> 
+                      <button class="btn btn-primary btn-add-to-cart"
+                      tabindex="0"><i class="las la-cart-arrow-down"></i>
+            ADD TO CART
+        </button></div>
+        <button style="display: block;" (click)="addToCart(prod)" [class.disabled]="prod.is_out_of_stock" class="btn btn-default btn-add-to-cart"><i class="las la-cart-arrow-down"></i>
+          <span *ngIf="prod.options_count===0">Add </span>
+          <span *ngIf="prod.options_count>0">View Options </span>
+        </button> 
+      
+      </div>
+
+      </td>
+
+  </tr>
+  </tbody>
+</table>
+      </div>
+  </div>
+  </div><a (click)="viewAllCategory1()" class="viewall view-text slick-arrow" aria-label="Next"
+    type="button" >view all</a></div></div>
+  
+  
+<div class="col-xl-4 col-lg-6 pad-right"><div class="vertical-products">
+  <div class="vertical-products-header"><h4 class="section-title">{{image2}}</h4></div>
+  <div class="vertical-products-slider slick-initialized slick-slider">
+<button (click)="btnPrev1()" style="display: none;" class="slick-prev slick-arrow" aria-label="Previous" type="button"
+[disabled]="curr1 === tot1">Previous</button><div class="slick-list draggable">
+      <div style="width: 100%;
+      overflow: scroll;
+      ">
+
+      
+ <table class="table table-bordered table-striped table-hover">
+
+  <tbody>
+  <tr >
+      <td *ngFor="let prod of arrSlider1">
+        <div class="product-card "  style="width: 157px;">
+
+          <div class="product-card-top"><a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+            class="product-image" tabindex="0">
+          <img [src]="prod.base_image.path"
+            alt="product image" class=""> 
+          </a> <div class="product-card-actions"><button title="Wishlist"
+              class="btn btn-wishlist" tabindex="0"><i class="la-heart lar"></i></button> <button
+              title="Compare" class="btn btn-compare" tabindex="0"><i class="las la-random"></i></button></div>
+               
+              <ul class="list-inline product-badge">
+                <li class="badge badge-danger" *ngIf="prod.is_out_of_stock">
+                Out of stock
+              </li>
+  
+              <li class="badge badge-primary" *ngIf="prod.is_new">
+                New
+              </li>
+  
+              <li class="badge badge-success" *ngIf="prod.has_percentage_special_price">
+                  -{{ prod.special_price_percent }}%
+              </li>
+              </ul>
+          
+          </div>
+               <div class="product-card-middle"><div class="product-rating"><div class="back-stars"><i class="las la-star"></i>
+                 <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                  <i class="las la-star"></i> <div class="front-stars" style="width: 0%;"><i class="las la-star"></i>
+                    <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                    <i class="las la-star"></i></div></div> <span class="rating-count">(0)</span></div>
+                    <a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+                    class="product-name" tabindex="0"><h6>{{prod.name}}</h6></a>
+                    <div class="product-price product-price-clone">{{prod.selling_price.formatted}}</div></div> <div class="product-card-bottom">
+                      <div class="product-price">{{prod.selling_price.formatted}}</div> 
+                    
+      </div>
+      <button style="display: block;" [class.disabled]="prod.is_out_of_stock" (click)="addToCart(prod)" class="btn btn-default btn-add-to-cart"><i class="las la-cart-arrow-down"></i>
+        <span *ngIf="prod.options_count===0">Add </span>
+        <span *ngIf="prod.options_count>0">View Options</span>
+      </button> 
+    </div>
+
+      </td>
+
+  </tr>
+  </tbody>
+</table>
+      </div>
+  </div>
+  </div><a (click)="viewAllCategory1()" href="javascript:void(0)" class="viewall slick-arrow" aria-label="Next"
+    style="">view all</a></div></div>
+  
+
+   
+<div class="col-xl-4 col-lg-6 pad-right"><div class="vertical-products">
+  <div class="vertical-products-header"><h4 class="section-title">{{image3}}</h4></div>
+  <div class="vertical-products-slider slick-initialized slick-slider">
+<!-- <button (click)="btnPrev2()" class="slick-prev slick-arrow" aria-label="Previous" type="button"
+    style="">Previous</button> -->
+    <div class="slick-list draggable">
+      <div style="width: 100%;
+      padding: 10px;
+      ">
+
+
+      
+ <table class="table table-bordered table-striped table-hover">
+
+  <tbody>
+  <tr >
+      <td *ngFor="let prod of arrSlider2">
+        <div class="product-card "  style="width: 157px;">
+
+          <div class="product-card-top"><a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+            class="product-image" tabindex="0">
+          <img [src]="prod.base_image.path"
+            alt="product image" class=""> 
+          </a> <div class="product-card-actions"><button title="Wishlist"
+              class="btn btn-wishlist" tabindex="0"><i class="la-heart lar"></i></button> <button
+              title="Compare" class="btn btn-compare" tabindex="0"><i class="las la-random"></i></button></div>
+              
+              <ul class="list-inline product-badge">
+                <li class="badge badge-danger" *ngIf="prod.is_out_of_stock">
+                Out of stock
+              </li>
+  
+              <li class="badge badge-primary" *ngIf="prod.is_new">
+                New
+              </li>
+  
+              <li class="badge badge-success" *ngIf="prod.has_percentage_special_price">
+                  -{{ prod.special_price_percent }}%
+              </li>
+              </ul>
+            
+            </div>
+               <div class="product-card-middle"><div class="product-rating"><div class="back-stars"><i class="las la-star"></i>
+                 <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                  <i class="las la-star"></i> <div class="front-stars" style="width: 0%;"><i class="las la-star"></i>
+                    <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                    <i class="las la-star"></i></div></div> <span class="rating-count">(0)</span></div>
+                    <a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+                    class="product-name" tabindex="0"><h6>{{prod.name}}</h6></a>
+                    <div class="product-price product-price-clone">{{prod.selling_price.formatted}}</div></div> <div class="product-card-bottom">
+                      <div class="product-price">{{prod.selling_price.formatted}}</div> 
+                    </div>
+                    <button style="display: block;" [class.disabled]="prod.is_out_of_stock" (click)="addToCart(prod)" class="btn btn-default btn-add-to-cart"><i class="las la-cart-arrow-down"></i>
+                      <span *ngIf="prod.options_count===0">Add </span>
+                      <span *ngIf="prod.options_count>0">View Options</span>
+                    </button> 
+                  </div>
+
+      </td>
+
+  </tr>
+  </tbody>
+</table>
+      </div>
+  </div>
+  </div><a (click)="viewAllCategory2()" href="javascript:void(0)" class="viewall slick-arrow" aria-label="Next"
+  style="">view all</a></div></div>
+   
+  
+  </div>
+
+  </div>
+</section>
+

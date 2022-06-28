@@ -1,0 +1,40 @@
+<div class="footer-wrap"><div class="container"><div class="footer">
+
+    </div></div>
+</div>
+<a *ngIf="iswhatsappload" class="whatsappimg" href="https://api.whatsapp.com/send?phone={{whatsappnum}}&text={{whatsapptext}}">
+    <img src="assets/whatsapp.png" width="50" />
+
+</a>
+<div class="topnav">
+       
+  <section class="top-nav-wrap"><div class="container"><div class="top-nav"><div class="row justify-content-between"><div class="top-nav-left d-none d-lg-block"><span>Welcome to Cartigo™</span>
+  </div> <div class="top-nav-right">
+      <ul style="width:100%" class="list-inline top-nav-right-list d-flex">
+          <li class="tabfooter"><a routerLinkActive="active-link" routerLink="/home">
+              <i class="las la-home"></i> 
+              
+  </a></li> 
+  <li class="tabfooter"><a (click)="getTag()" [class]="productclass" routerLinkActive="active-link"   href="javascript:void(0)">
+     <i class="las  la-gift"></i> 
+     
+  </a></li> 
+  <li class="tabfooter"><a routerLinkActive="active-link" routerLink="/categories" href="javascript:void(0)">
+       <i class="las la-list"></i> 
+     
+  </a></li> 
+  <li class="tabfooter"><a routerLinkActive="active-link" routerLink="/cart"  href="javascript:void(0)">
+      <i class="las la-cart-plus"></i> 
+      <div *ngIf="cartno>0" class="count">{{cartno}}</div>
+ </a></li> 
+  <li class="tabfooter" *ngIf="!isloggedin"><a routerLink="/login-phone" routerLinkActive="active-link">
+     <i class="las la-sign-in-alt"></i> 
+          
+      </a></li>
+      <li class="tabfooter" *ngIf="isloggedin" ><a routerLink="/dashboard" routerLinkActive="active-link">
+         <i class="las la-user"></i> 
+          
+      </a></li> 
+  
+  </ul></div></div></div></div></section>
+</div>

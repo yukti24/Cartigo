@@ -1,0 +1,43 @@
+<app-side-nav 
+  [sidenavTemplateRef]="navContent"
+  [direction]="'left'" 
+  [navWidth]="280" 
+  [duration]="0.5"></app-side-nav>
+
+
+  <app-cart-nav 
+  [sidenavTemplateRef]="cartContent"
+  [direction]="'left'" 
+  [navWidth]="280" 
+  [duration]="0.5"></app-cart-nav>
+
+
+  <app-filter-nav
+  [sidenavTemplateRef]="filterContent"
+  [direction]="'left'" 
+  [navWidth]="280" 
+  [duration]="0.5"></app-filter-nav>
+
+<div class="main-container" #scrollContainer>
+  <app-header></app-header>
+  <section>
+  
+
+    <router-outlet (activate)="onActivate($event, scrollContainer)"></router-outlet>
+    <alert></alert>
+  </section>
+</div>
+
+<ng-template #navContent>
+  <app-side-nav-content></app-side-nav-content>
+</ng-template>
+
+
+<ng-template #cartContent>
+  <app-cart-nav-component></app-cart-nav-component>
+</ng-template>
+
+
+<ng-template #filterContent>
+  <app-filter-nav-component></app-filter-nav-component>
+</ng-template>

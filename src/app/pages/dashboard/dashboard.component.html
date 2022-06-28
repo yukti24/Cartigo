@@ -1,0 +1,48 @@
+
+<section class="account-wrap"><div class="container">
+ 
+  <div class="account-wrap-inner">
+    <app-user-menu type="dash" ></app-user-menu>
+
+<div class="account-right">
+  <div class="panel-wrap"><div class="panel">
+    <div class="panel-header"><h4>Recent Orders</h4> <a routerLink="/myorders">
+  View All
+</a></div>
+ <div class="panel-body"><div class="table-responsive">
+   <table class="table table-borderless my-orders-table">
+     <thead>
+       <tr><th>ORDER ID</th> 
+        <th>DATE</th> <th>STATUS</th>
+         <th>TOTAL</th> <th>ACTION</th></tr>
+        </thead> <tbody>
+          <tr *ngFor="let order of arrOrder.orders">
+            <td>
+    {{order.id}}
+  </td> <td>
+    {{ order.created_at | date: "mediumDate" }}
+
+    
+    
+  </td> <td>
+    <span class="badge badge-danger">
+          {{order.status}}
+      </span></td> 
+      <td>
+     {{order.total.formatted}}
+  </td>
+   <td><a href="javascript:void(0)" (click)="gotoOrdeerDetsil(order.id)" class="btn btn-view"><i class="las la-eye"></i>
+          View
+      </a></td></tr> 
+   </tbody></table></div></div></div> 
+      <div class="panel"><div class="panel-header"><h4>Account Information</h4>
+         <a  routerLink="/profile">
+Edit
+</a></div> <div *ngIf="arrOrder.account !== undefined" class="panel-body">
+  <ul class="list-inline user-info"><li><i class="las la-user-circle"></i> 
+    <span>{{arrOrder.account.first_name}} {{arrOrder.account.last_name}}</span></li> <li><i class="las la-envelope"></i> 
+      <span>{{arrOrder.account.email}}</span></li></ul></div></div></div></div>
+
+      </div>  </div></section>
+
+      <app-footer1></app-footer1>

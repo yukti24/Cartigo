@@ -1,0 +1,91 @@
+ <div class="footer-wrap"><div class="container"><div class="footer"><div class="footer-top"><div class="row"><div class="col-lg-5 col-md-8"><div class="contact-us"><h4 class="title">Contact Us</h4>
+     <ul class="list-inline contact-info"><li><i class="las la-phone"></i> <span>+91-7032909455</span></li> <li><i class="las la-envelope"></i> <span>support@cartigo.in</span></li> <li><i class="las la-map"></i> <span>Ranchi, Jharkhand</span></li></ul> <ul class="list-inline social-links"><li>
+         <a href="https://m.facebook.com/Cartigo.Ranchi/"><i class="lab la-facebook"></i></a></li> <li><a href="https://instagram.com/cartigo.in?igshid=f727gwemyvg8"><i class="lab la-instagram"></i></a></li></ul></div></div> <div class="col-lg-3 col-md-5">
+           <!--   <div class="footer-links"><h4 class="title">My Account</h4> <ul class="list-inline"><li>
+             <a href="/dashboard">
+  Dashboard
+</a></li> <li><a href="/myorders">
+  My Orders
+</a></li> <li><a href="/reviews">
+  My Reviews
+</a></li> <li><a href="/profile">
+  My Profile
+</a></li></ul></div> -->
+</div> 
+<div class="col-lg-3 col-md-5">
+    <div class="footer-links"><h4 class="title">Terms &amp; Policies</h4> 
+        <ul class="list-inline"><li>
+            <a routerLink="/faq" target="_self">
+          FAQ
+      </a></li> <li><a routerLink="/company" target="_self">
+          Company
+      </a></li> <li><a routerLink="/privacy" target="_self">
+          Privacy &amp; Policy
+      </a></li> <li><a routerLink="/terms" target="_self">
+          Terms &amp; Conditions
+      </a></li> <li><a routerLink="/return-policy" target="_self">
+          Exchange &amp; Shipping
+      </a></li></ul></div></div> <div class="col-lg-3 col-md-5">
+          <div class="footer-links"><h4 class="title">Information</h4> 
+            <ul class="list-inline"><li><a routerLink="/career" target="_self">
+          Career
+      </a></li> <li><a (click)="getTags('hot-deals','Hot Deals')" href="javascript:void(0)" target="_self">
+          Hot Deals
+      </a></li> <li><a routerLink="/products" target="_self">
+          Today's Deal
+      </a></li> <li><a  routerLink="/brands" target="_self">
+          Interesting Reads
+      </a></li> <li><a routerLink="/career" target="_self">
+          Inspirational Videos
+      </a></li></ul></div></div> <div class="col-lg-4 col-md-7"><div class="footer-links footer-tags"><h4 class="title">Tags</h4> 
+        <ul class="list-inline">
+            <li><a (click)="getTags('dry-fruits','Dry Fruits')" href="javascript:void(0)" >
+          Dry Fruits
+      </a></li> <li><a (click)="getTags('health-drinks','Health Drinks')" href="javascript:void(0)" >
+          Health Drinks
+      </a></li> <li><a (click)="getTags('healthy-foods','Healthy Foods')" href="javascript:void(0)" >
+          Healthy Foods
+      </a></li> <li><a (click)="getTags('new-arrivals','New Arrivals')" href="javascript:void(0)" >
+          New Arrivals
+      </a></li> <li><a (click)="getTags('noodles','Noodles')" href="javascript:void(0)" >
+          Noodles
+      </a></li> <li><a (click)="getTags('snacks','Snacks')" href="javascript:void(0)" >
+          Snacks
+      </a></li> <li><a  (click)="getTags('veggies','Veggies')" href="javascript:void(0)">
+          Veggies
+      </a></li></ul></div></div></div></div> <div class="footer-bottom"><div class="row align-items-center"><div class="col-md-9 col-sm-18"><div class="footer-text">
+Copyright © <a href="/home">Cartigo™</a> 2021. All rights reserved.
+</div></div> <div class="col-md-9 col-sm-18"><div class="footer-payment"><img src="https://cartigo.in/storage/media/XBtKLL9KaD7PQd2hgP1z1vEleQaiH0ivlZ5fzd4q.png" alt="accepted payment methods"></div></div></div></div></div></div></div> 
+
+<div class="topnav">
+       
+    <section class="top-nav-wrap"><div class="container"><div class="top-nav"><div class="row justify-content-between"><div class="top-nav-left d-none d-lg-block"><span>Welcome to Cartigo™</span>
+    </div> <div class="top-nav-right">
+        <ul style="width:100%" class="list-inline top-nav-right-list d-flex">
+            <li class="tabfooter"><a routerLinkActive="active-link" routerLink="/home">
+                <i class="las la-home"></i> 
+                
+    </a></li> 
+    <li class="tabfooter"><a (click)="getTag()" routerLinkActive="active-link"   href="javascript:void(0)">
+       <i class="las  la-gift"></i> 
+       
+    </a></li> 
+    <li class="tabfooter"><a routerLinkActive="active-link" routerLink="/categories" href="javascript:void(0)">
+         <i class="las la-list"></i> 
+       
+    </a></li> 
+    <li class="tabfooter"><a routerLinkActive="active-link" routerLink="/cart"  href="javascript:void(0)">
+        <i class="las la-cart-plus"></i> 
+        <div *ngIf="cartno>0" class="count">{{cartno}}</div>
+   </a></li> 
+    <li class="tabfooter" *ngIf="!isloggedin"><a routerLink="/login-phone" routerLinkActive="active-link">
+       <i class="las la-sign-in-alt"></i> 
+            
+        </a></li>
+        <li class="tabfooter" *ngIf="isloggedin" ><a routerLink="/dashboard" routerLinkActive="active-link">
+           <i class="las la-user"></i> 
+            
+        </a></li> 
+    
+    </ul></div></div></div></div></section>
+  </div>

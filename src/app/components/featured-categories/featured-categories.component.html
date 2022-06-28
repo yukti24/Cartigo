@@ -1,0 +1,55 @@
+<section class="featured-categories-wrap">
+  <div class="container">              
+      <div class="featured-categories-header"> 
+        <div class="featured-categories-text">
+        
+          <h2 class="title">{{title}}</h2>
+             <span class="excerpt">
+                 {{subtitle}}</span></div>
+                 <div style="text-align: right;"  class="container">
+                  <a class="view-text" (click)="getcategory();" href="javascript:void(0)">view all</a>
+        </div>
+       <!--    <ul class="tabs featured-categories-tabs">
+              <li
+                  *ngFor="let tab in tabs"
+                  :key="index"
+                  :class="classes(tab)"
+                  (click)="change(tab)"
+              >
+                  <div class="featured-category-image">
+                      <img src="tab.logo" :class="{ 'image-placeholder': ! tab.hasLogo }" alt="category logo">
+                  </div>
+
+                  <span class="featured-category-name">{{ tab.label }}</span>
+              </li>
+          </ul> -->
+   
+          <ul class="tabs featured-categories-tabs">
+              <li *ngFor="let navitem of arrCategory" class="tab-item product-card"><div (click)="getProducts(navitem)"
+                class="featured-category-image">
+              <img 
+                [src]="navitem.logo.path" alt="category logo" 
+                class=""> 
+              </div> <span class="featured-category-name">{{navitem.name}}</span>
+            </li>
+   </ul>
+   
+   
+        </div>
+
+      <div class="tab-content featured-category-products">
+<!--               <ProductCard v-for="product in products" :key="product.id" :product="product"/>
+-->        
+
+</div>
+  </div>
+
+<!--   <dynamic-tab
+      v-for="(category, index) in data.categories"
+      :key="index"
+      :label="category.name"
+      :initial-logo="category.logo"
+      :url="route('storefront.featured_category_products.index', { categoryNumber: index + 1 })"
+  >
+  </dynamic-tab> -->
+</section>

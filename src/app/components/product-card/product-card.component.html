@@ -1,0 +1,84 @@
+
+<ng-template #productcard  let-product='product' >
+
+
+
+
+<div class="product-card">
+  <div class="product-card-top">
+      <a [href]="productUrl" class="product-image">
+          <img [src]="baseImage" [class]="baseimgclass" 
+          alt="product image">
+      </a>
+
+      <div class="product-card-actions">
+          <button
+              class="btn btn-wishlist"
+              class=""
+              title="wishlist"
+              (click)="syncWishlist()"
+          >
+              <i class="la-heart" [class]="wishlistclass"></i>
+          </button>
+  <!-- :class="{ 'added': inCompareList }" -->
+          <button
+              class="btn btn-compare"
+            
+              title="$trans('storefront::product_card.compare')"
+              (click)="syncCompareList()"
+          >
+              <i class="las la-random"></i>
+          </button>
+      </div>
+
+      <ul class="list-inline product-badge">
+          <li class="badge badge-danger" *ngIf="product.is_out_of_stock">
+             Out of Stock
+          </li>
+
+          <li class="badge badge-primary" *ngIf="product.is_new">
+             New
+          </li>
+
+          <li class="badge badge-success" *ngIf="product.has_percentage_special_price">
+              -{{ product.special_price_percent }}%
+          </li>
+      </ul>
+  </div>
+
+  <div class="product-card-middle">
+      <!-- <ProductRating :ratingPercent="product.rating_percent" :reviewCount="product.reviews.length"/> -->
+
+      <a href="productUrl" class="product-name">
+          <h6>{{ product.name }}</h6>
+      </a>
+
+      <div class="product-price product-price-clone" v-html="product.formatted_price"></div>
+  </div>
+
+  <div class="product-card-bottom">
+      <div class="product-price" v-html="product.formatted_price"></div>
+
+      <button
+          v-if="hasNoOption || product.is_out_of_stock"
+          class="btn btn-primary btn-add-to-cart"
+          :class="{ 'btn-loading': addingToCart }"
+          :disabled="product.is_out_of_stock"
+          (click)="addToCart()"
+      >
+          <i class="las la-cart-arrow-down"></i>
+        add to cart
+      </button>
+
+      <a
+          v-else
+          :href="productUrl"
+          class="btn btn-primary btn-add-to-cart"
+      >
+          <i class="las la-eye"></i>
+         view options
+      </a>
+  </div>
+</div>
+
+</ng-template>

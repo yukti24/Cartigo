@@ -1,0 +1,69 @@
+.badge {
+    padding: .25em .4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.badge {
+    font-size: 14px;
+    font-weight: 400;
+    min-width: 120px;
+    display: inline-block;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.badge-danger {
+    color: #e23e1d;
+    background: #fdf0ed;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.my-orders-table tbody td, .my-orders-table thead th {
+    white-space: nowrap;
+}
+
+.my-orders-table .badge {
+    margin-top: -6px;
+}
+
+.table td {
+    padding: 20px 30px;
+    border-color: #ebebeb;
+}
+
+.user-info {
+    padding: 23px 30px;
+}
+
+.user-info li {
+    display: -webkit-box;
+    display: flex;
+    line-height: 24px;
+    padding: 11px 0;
+    color: #6e6e6e;
+}
+
+.user-info li>i {
+    font-size: 24px;
+    margin-right: 8px;
+    vertical-align: top;
+}
+
+.user-info li>span {
+    word-break: break-all;
+}
+
+
+

@@ -1,0 +1,202 @@
+.form-wrap {
+    margin-top: 63px;
+    padding-bottom: 20px;
+}
+
+.form-wrap-inner {
+    width: 600px;
+    margin: auto;
+    padding: 0 15px;
+}
+@media screen and (max-width: 647px){
+.form-wrap-inner {
+    width: 100%;
+}}
+
+h2 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: Rubik,Arial,Helvetica,sans-serif;
+    font-size: 15px;
+    line-height: 26px;
+    position: relative;
+    border: none;
+    padding: 7px 24px;
+    border-radius: 2px;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+
+.form-wrap-inner>h2 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+.form-check label {
+    font-weight: 400;
+    color: #6e6e6e;
+}
+.form-control {
+    display: block;
+   
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.form-control {
+    font-size: 14px;
+    height: 45px;
+    padding: 10px 15px;
+    border-color: #ebebeb;
+    border-radius: 2px;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+    width: 100vh;
+}
+
+.login-wrap .forgot-password {
+    margin-top: -1px;
+    color: #6e6e6e;
+    float: right;
+}
+
+.login-wrap .remember-me {
+    margin-top: -1px;
+    float: left;
+}
+@media screen and (max-width: 380px){
+.login-wrap .forgot-password, .login-wrap .remember-me {
+    display: block;
+    text-align: center;
+    float: none;
+}}
+
+@media screen and (max-width: 380px){
+.login-wrap .forgot-password {
+    margin-top: 4px;
+}
+}
+
+.form-wrap-inner .btn-primary {
+    width: 100%;
+    padding: 12px 14px;
+    letter-spacing: 1px;
+}
+
+.login-wrap .btn-sign-in {
+    margin-top: 34px;
+}
+.btn-primary, .btn-primary:focus {
+    background: #0068e1;
+    background: #002b5c;
+}
+
+.form-wrap-inner .sign-in-with {
+    font-size: 16px;
+    display: block;
+    margin-top: 25px;
+    color: #6e6e6e;
+    text-align: center;
+}
+
+.form-wrap-inner .social-login, .form-wrap-inner .social-login li a {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.form-wrap-inner .social-login, .form-wrap-inner .social-login li a {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.form-wrap-inner .social-login li a {
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+    color: #fff;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.form-wrap-inner .social-login li a.facebook {
+    background: #3a559f;
+}
+
+.la-facebook-f:before {
+    content: "\F39E";
+}
+.form-wrap-inner .social-login li a.google {
+    background: #d94936;
+}
+
+.la-google:before {
+    content: "\F1A0";
+}
+
+.form-wrap-inner .have-an-account {
+    display: block;
+    line-height: 26px;
+    margin-top: 23px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.login-wrap .btn-create-account {
+    margin-top: 12px;
+}
+.form-wrap-inner .btn-default {
+    width: 100%;
+    padding: 11px 14px;
+    letter-spacing: 1px;
+}
+
+.form-check input[type=checkbox]:not(:checked)+label {
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: left;
+}
+
+.btn-primary {
+    font-weight: 500;
+    color: #fff;
+}

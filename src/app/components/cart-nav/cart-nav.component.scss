@@ -1,0 +1,232 @@
+/* fonts */
+
+$primary-font: 'Rubik', Arial, Helvetica, sans-serif;
+
+/* default theme colors */
+
+$color-default: #0068e1;
+$color-default-hover: #0055b8;
+$color-default-transparent: rgba(0, 85, 184, 0.8);
+$color-default-transparent-lite: rgba(0, 85, 184, 0.3);
+
+/* colors */
+
+$color-white: #ffffff;
+$color-white-lite: #f2f4f5;
+$color-white-dark: #f9f9f9;
+$color-white-transparent: rgba(255, 255, 255, 0.7);
+$color-black: #191919;
+$color-gray: #6e6e6e;
+$color-gray-lite: #ebebeb;
+$color-gray-dark: #a6a6a6;
+$color-red: #e23e1d;
+$color-green: #1eb48e;
+$color-info: #247cc6;
+$color-yellow: #ffb136;
+$border-color: #e1e1e1;
+$border-color-lite: #e5e5e5;
+
+/* screen size */
+
+$xl: 1199px;
+$lg: 991px;
+$md: 767px;
+$sm: 576px;
+
+
+
+/* miscellaneous */
+
+$radius-default: 2px;
+$transition-default: 150ms ease-in-out;
+$transition-primary: 200ms ease-in-out;
+
+
+
+.sidebar-cart-wrap {
+    position: fixed;
+    top: 0;
+    right: -200px;
+    bottom: 0;
+    height: 100%;
+    width: 400px;
+    background: #fff;
+    box-shadow: 2.5px 4.33px 40px 5px rgba(12, 31, 46, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 200;
+    transition: $transition-primary;
+
+    &.active {
+        right: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .empty-message {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 40px 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+        svg {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 22px;
+
+            g {
+                fill: $color-default;
+                fill: var(--color-primary);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .sidebar-cart-wrap {
+        right: -180px;
+        width: 360px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .sidebar-cart-wrap {
+        right: -165px;
+        width: 330px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .sidebar-cart-wrap {
+        right: -150px;
+        width: 300px;
+
+        .sidebar-cart-actions {
+            flex-direction: column;
+
+            .btn-view-cart {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+
+
+
+
+.side-nav-bar {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .side-nav-bar-overlay {
+        background: rgba(0,0,0,0.5);
+        width: 100%;
+        height: 100%;
+    }
+
+    .side-nav-bar-menu-container {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: #FFF;
+        display: flex;
+        flex-direction: column;
+
+        .side-nav-bar-close {
+            display: inline-block;
+    
+    /* margin: 24px 0px 0px 24px; */
+    margin: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+        }
+    }
+
+    .side-nav-bar-content-container {
+        padding: 2px;
+    }
+}
+
+.side-nav-bar-overlay-collapsed {
+    background: transparent !important;
+}
+
+.side-nav-bar-collapsed {
+    visibility: collapse !important;
+}
+
+.navbartopbg
+{
+    display: -webkit-box;
+    display: flex;
+    padding-left: 25px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background: #0068e1;
+    background: #002b5c;
+}
+
+.sidebar-menu-close {
+    display: -webkit-box;
+    display: flex;
+    cursor: pointer;
+    opacity: .8;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+
+
+.navbartopbg h4
+{
+    
+    font-weight: 400;
+    color: #fff;
+
+}
+
+
+.sidebar-cart-top {
+    display: flex;
+    padding: 15px 30px;
+    align-items: center;
+    justify-content: space-between;
+    background: $color-default;
+    background: var(--color-primary);
+
+    .title {
+        font-weight: 400;
+        color: $color-white;
+    }
+
+    .sidebar-cart-close {
+        display: flex;
+        cursor: pointer;
+        opacity: 0.8;
+        transition: $transition-default;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        > i {
+            font-size: 18px;
+            color: $color-white;
+        }
+    }
+}

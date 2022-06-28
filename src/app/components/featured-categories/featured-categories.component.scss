@@ -1,0 +1,129 @@
+.featured-categories-text {
+    padding: 30px;
+}
+
+.container {
+    max-width: 100%;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.featured-categories-text .title {
+    font-weight: 400;
+    text-align: center;
+}
+h2 {
+   
+    line-height: 36px;
+}
+h1, h2, h3, h4, h5, h6, p, span {
+    font-family: Rubik,Arial,Helvetica,sans-serif;
+}
+address, h1, h2, h3, h4, h5, h6, li, ol, p, ul {
+    margin: 0;
+    padding: 0;
+}
+.excerpt {
+    font-weight: 300;
+    line-height: 24px;
+    display: block;
+    margin-top: 10px;
+    color: #6e6e6e;
+}
+
+.featured-categories-header {
+    flex-wrap: wrap;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.featured-categories-tabs {
+    display: -webkit-box;
+    display: flex;
+}
+
+.featured-categories-wrap .tabs {
+    margin: 30px -15px -30px;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+
+
+
+@media screen and (max-width: 1600px){
+.featured-categories-wrap .tabs .tab-item {
+    // height: 120px;
+    // width: 130px;
+}
+}
+
+@media screen and (max-width: 1550px){
+.featured-categories-wrap .tabs .tab-item {
+  //  height: 110px;
+  //  width: 120px;
+}
+}
+
+@media screen and (max-width: 1300px){
+.featured-categories-wrap .tabs .tab-item {
+    margin: 0 8px 30px;
+}}
+
+.featured-categories-tabs .tab-item {
+    display: -webkit-box;
+    display: flex;
+    height: 160px;
+    width: 150px;
+    margin-left: 30px;
+    padding: 10px;
+    text-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    cursor: pointer;
+    z-index: 0;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+
+.featured-categories-tabs .tab-item.active {
+    border-color: rgba(0,85,184,.8);
+    border-color: var(--color-primary-transparent);
+    cursor: default;
+}
+
+
+.featured-categories-tabs .featured-category-image {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 50%;
+}
+
+.featured-categories-tabs .featured-category-image>img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    max-height: 100%;
+    max-width: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.featured-categories-tabs .featured-category-name {
+    font-size: 14px;
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

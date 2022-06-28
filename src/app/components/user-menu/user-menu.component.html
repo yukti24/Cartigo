@@ -1,0 +1,35 @@
+
+
+<div class="account-left">
+  <ul class="list-inline account-sidebar">
+    <li [class]="clsDash">
+      <a (click)="gotoDashboard()" href="javascript:void(0)">
+    <i class="las la-tachometer-alt"></i>
+     Dashboard
+</a></li> 
+<li [class]="clsOrder"><a routerLink="/myorders" href="javascript:void(0)"><i class="las la-cart-arrow-down"></i>
+My Orders
+</a></li> 
+<li [class]="clsCoupon"><a routerLink="/usercoupon" href="javascript:void(0)"><i class="las la-user-circle"></i>
+  My Coupons
+  </a></li> 
+<li [class]="clsWish"><a routerLink="/wishlist" href="javascript:void(0)"><i class="lar la-heart"></i>
+My Wishlist
+</a></li> 
+<li [class]="clsReview"><a routerLink="/reviews" href="javascript:void(0)"><i class="las la-comment"></i>
+My Reviews
+</a></li> 
+<li [class]="clsAddr"><a routerLink="/addresses" href="javascript:void(0)"><i class="las la-address-book"></i>
+My Addresses
+</a></li> 
+<li [class]="clsProfile"><a  (click)="gotoProfile()" href="javascript:void(0)"><i class="las la-user-circle"></i>
+My Profile
+</a></li> 
+<li *ngIf="isVendor" [class]="clsProfile"><a href="javascript:void(0)"><i class="las la-user-circle"></i>
+Switch to Vendor
+</a></li> 
+<li   ><a (click)="logout()" href="javascript:void(0)"><i class="las la-sign-out-alt"></i>
+Logout
+</a></li>
+</ul>
+</div> 

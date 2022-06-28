@@ -1,0 +1,81 @@
+<div class="container">
+  <div id="snackbar" [class.show]="isAddtocart"  >Product added to cart</div>
+
+  <!-- <ul class="nav nav-tabs">
+      <li class="nav-item"><a class="nav-link " data-toggle="tab" data-target="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#menu1">Menu 1</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#menu2">Menu 2</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" data-target="#menu3">Menu 3</a></li>
+    </ul> -->
+
+    <div class="tab-products-header clearfix">
+      <ul class="nav nav-tabs  float-left">
+        <li class="nav-item active">
+        <a class="nav-link active" (click)="getTabonedProd(1)"  data-toggle="tab" data-target="#home">Featured</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link "  (click)="getTabonedProd(2)"  data-toggle="tab" data-target="#home">Special</a>
+  </li><li class="nav-item">
+    <a class="nav-link " (click)="getTabonedProd(3)"  data-toggle="tab" data-target="#home"> New Arrivals</a>
+  </li><li class="nav-item">
+    <a class="nav-link " (click)="getTabonedProd(4)"  data-toggle="tab" data-target="#home">Latest</a>
+  </li></ul></div>
+
+    </div>
+<div id="divprod" name="divprod" style="width: 100%;
+overflow: scroll;
+">
+<ngx-spinner name="spinnerhome" bdColor = "#eeeeee73" size = "default" color = "#000" type = "ball-clip-rotate" [fullScreen] = "false"><p style="color: black" >  Loading... </p></ngx-spinner>
+
+ <table class="table table-bordered table-striped table-hover">
+
+  <tbody>
+  <tr >
+      <td *ngFor="let prod of arrSlider">
+        <div class="product-card "  style="width: 157px;">
+        
+          <div class="product-card-top"><a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+            class="product-image" tabindex="0"><img [src]="prod.base_image.path"
+            alt="product image" class=""></a> <div class="product-card-actions"><button title="Wishlist"
+              class="btn btn-wishlist" tabindex="0"><i class="la-heart lar"></i></button> <button
+              title="Compare" class="btn btn-compare" tabindex="0"><i class="las la-random"></i></button></div>
+              <ul class="list-inline product-badge">
+                <li class="badge badge-danger" *ngIf="prod.is_out_of_stock">
+                Out of stock
+              </li>
+  
+              <li class="badge badge-primary" *ngIf="prod.is_new">
+                New
+              </li>
+  
+              <li class="badge badge-success" *ngIf="prod.has_percentage_special_price">
+                  -{{ prod.special_price_percent }}%
+              </li>
+              </ul>
+            
+            </div>
+               <div class="product-card-middle"><div class="product-rating"><div class="back-stars"><i class="las la-star"></i>
+                 <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                  <i class="las la-star"></i> <div class="front-stars" style="width: 0%;"><i class="las la-star"></i>
+                    <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i>
+                    <i class="las la-star"></i></div></div> <span class="rating-count">(0)</span></div>
+                    <a href="javascript:void(0)" (click)="prodDetail(prod.slug,prod.name)"
+                    class="product-name" tabindex="0"><h6>{{prod.name}}</h6></a>
+                    <div class="product-price product-price-clone">{{prod.selling_price.formatted}}</div></div> <div class="product-card-bottom">
+                      <div class="product-price">{{prod.selling_price.formatted}}</div>
+                     
+                     
+      </div>
+      <button style="display: block;" [class.disabled]="prod.is_out_of_stock" (click)="addToCart(prod)" class="btn btn-default btn-add-to-cart"><i class="las la-cart-arrow-down"></i>
+        <span *ngIf="prod.options_count===0">Add </span>
+        <span *ngIf="prod.options_count>0">View Options</span>
+      </button> 
+    </div>
+
+      </td>
+
+  </tr>
+  </tbody>
+</table>
+</div>
+

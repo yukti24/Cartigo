@@ -1,0 +1,159 @@
+<section class="form-wrap register-wrap">
+  <div class="container">
+    <div class="form-wrap-inner register-wrap-inner"><h2>Register</h2> 
+   <!--    <form method="POST" action="https://cartigo.in/register">
+        <input type="hidden" name="_token" value="hP0oSNwnR2k2JpXv4tlsL8B9pi3bYDxzF6kSwhp0"> 
+        <div class="form-group"><label for="first-name">
+  First Name<span>*</span></label>
+   <input type="text" name="first_name" value="" id="first-name" 
+   class="form-control"></div> <div class="form-group">
+     <label for="last-name">
+  Last Name<span>*</span></label> 
+  <input type="text" name="last_name" value="" id="last-name" class="form-control"></div>
+   <div class="form-group"><label for="email">
+  Email<span>*</span></label> <input type="text" name="email" value="" id="email" class="form-control"></div> 
+  <div class="form-group"><label for="phone">
+  Phone<span>*</span></label> <input type="text" name="phone" value="" id="phone" class="form-control"></div> 
+  <div class="form-group"><label for="password">
+  Password<span>*</span></label> <input type="password" name="password" id="password" class="form-control"></div>
+   <div class="form-group"><label for="confirm-password">
+  Confirm Password<span>*</span></label> <input type="password" name="password_confirmation" id="confirm-password" class="form-control"></div> 
+ 
+     <div class="form-check terms-and-conditions"><input type="hidden" name="privacy_policy" value="0"> <input type="checkbox" name="privacy_policy" value="1" id="terms">
+       <label for="terms" class="form-check-label">
+  I agree to the <a href="https://cartigo.in/privacy-policy">Privacy Policy</a></label></div> <button type="submit" data-loading="" class="btn btn-primary btn-create-account">
+CREATE ACCOUNT
+</button></form>  -->
+
+<form class=" form_main" [formGroup]="form" (ngSubmit)="onSubmit()">
+           
+  <div *ngIf="isErr" style="margin: 20px;
+  padding: 10px;" class="alert1 alert-danger container mt-4">
+    {{errormsg}}</div>
+           
+    <div *ngIf="isSuccess" style="margin: 20px;
+    padding: 10px;" class="alert1 alert-success container mt-4">
+      {{succmsg}}</div>
+              <div class="form-group">
+                <label for="password">First Name<span>*</span></label>   
+               
+            <input
+            type="text"
+            placeholder="first name"
+            formControlName="firstname"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
+          />
+          <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+            <div *ngIf="f.firstname.errors.required">
+              First Name is required
+            </div>
+            <div *ngIf="f.firstname.errors.pattern">enter valid first name</div>
+          </div>
+              </div>
+  
+  
+              <div class="form-group">
+                <label for="password">Last Name<span>*</span></label> 
+                <input
+                type="text"
+                formControlName="lastname" placeholder="last name"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+              />
+              <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                <div *ngIf="f.lastname.errors.pattern">enter valid last name</div>
+              </div>
+              </div>
+  
+  
+  
+              <div class="form-group">
+                <label for="password">Email<span>*</span></label> 
+                <input
+                type="text"
+                placeholder="email "
+                formControlName="email"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+              />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.pattern">enter valid email</div>
+              </div>
+                 
+              
+              </div>
+             
+              <div class="form-group">
+                <label for="password">Phone<span>*</span></label> 
+                <input
+                type="text"
+                placeholder="phone"
+                formControlName="phone"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+              />
+              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                <div *ngIf="f.phone.errors.required">Phone is required</div>
+                <div *ngIf="f.phone.errors.pattern">enter valid phone</div>
+              </div>
+                 
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password<span>*</span></label> 
+                <input type="password" formControlName="password"  class="form-control" autocomplete="off"
+                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">Password is required</div>
+                  
+              </div>
+              </div>
+
+              <div class="form-group">
+                <label for="repassword">Confirm Password<span>*</span></label> 
+                <input type="password" formControlName="repassword"  class="form-control" autocomplete="off"
+                 [ngClass]="{ 'is-invalid': submitted && f.repassword.errors }" >
+                <div *ngIf="submitted && f.repassword.errors" class="invalid-feedback">
+                  <div *ngIf="f.repassword.errors.required">Confirm Password is required</div>
+                  
+              </div>
+              <div class="invalid-feedback" *ngIf="iserrcnf">Confirm Password and new password are not same</div>
+
+              </div>
+  
+            
+             
+              <div class="form-check terms-and-conditions">
+                <input type="hidden" name="privacy_policy" value="0"> 
+                <input type="checkbox" style="margin:10px"  name="chkPolicy"  formControlName="chkPolicy"  class=" checkmark"
+                [ngClass]="{ 'is-invalid': submitted && f.chkPolicy.errors }" />  
+                                <label for="terms" class="form-check-label">
+           I agree to the <a routerLink="/privacy">Privacy Policy</a></label></div> 
+           <input
+           name="submit"
+           class="btn btn-primary"
+           accesskey="l"
+           value="Create Account"
+           tabindex="3"
+           type="submit"
+         />
+
+
+  
+          </form>
+
+
+
+<span class="sign-in-with">
+Or, Sign Up With
+</span> <ul class="list-inline social-login"><li><a href="https://cartigo.in/login/facebook" data-toggle="tooltip" data-placement="top" title="Facebook" class="facebook">
+  <i class="lab la-facebook-f"></i></a></li> <li><a href="https://cartigo.in/login/google" data-toggle="tooltip" data-placement="top" title="Google" class="google">
+    <i class="lab la-google"></i></a></li></ul> <span class="have-an-account">
+Already Have an Account?
+</span>
+ <a routerLink="/login-phone" class="btn btn-default btn-sign-in">
+SIGN IN
+</a></div></div></section>

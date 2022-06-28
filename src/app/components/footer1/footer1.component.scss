@@ -1,0 +1,276 @@
+.footer {
+    padding-top: 2px;
+    padding-bottom: 70px;
+  
+}
+
+
+.lab, .lar, .las {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.lar, .las {
+    font-family: Line Awesome Free;
+}
+
+.las {
+    font-weight: 900;
+}
+
+.la-phone:before {
+    content: "\F095";
+}
+
+.contact-info>li>span {
+    line-height: 22px;
+    display: block;
+    margin-left: 24px;
+    word-break: break-all;
+    white-space: pre-wrap;
+}
+
+
+@media screen and (max-width: 767px){
+.footer-top .social-links {
+    margin: 19px 0 -3px -8px;
+}
+}
+
+.social-links li {
+    display: -webkit-inline-box;
+    display: inline-flex;
+    margin-right: 5px;
+}
+
+
+.social-links li a {
+    font-size: 22px;
+    display: -webkit-box;
+    display: flex;
+    height: 35px;
+    width: 35px;
+    color: #6e6e6e;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.la-facebook:before {
+    content: "\F09A";
+}
+
+.la-instagram:before {
+    content: "\F16D";
+}
+
+.la-envelope:before {
+    content: "\F0E0";
+}
+
+.la-map:before {
+    content: "\F279";
+}
+
+.footer-links {
+    margin-top: 38px;
+}
+
+.footer-top .title {
+    margin-bottom: 23px;
+}
+
+.footer-links:not(.footer-tags) .list-inline li {
+    display: block;
+    margin-bottom: 14px;
+}
+
+.footer-links:not(.footer-tags) .list-inline li a {
+    display: inline-block;
+    max-width: 100%;
+    color: #6e6e6e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+
+.footer-tags .list-inline {
+    margin-bottom: -7px;
+}
+
+.footer-tags .list-inline li {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 4px 7px 0;
+}
+
+.footer-tags .list-inline li a {
+    line-height: 33px;
+    display: block;
+    color: #6e6e6e;
+    border: 1px solid #ebebeb;
+    border-radius: 2px;
+    padding: 0 10px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+
+.footer-bottom {
+    margin-top: 60px;
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+@media screen and (max-width: 767px){
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 13px;
+}
+}
+
+.align-items-center {
+    -webkit-box-align: center!important;
+    align-items: center!important;
+}
+
+.footer-text {
+    line-height: 26px;
+    color: #6e6e6e;
+}
+
+@media screen and (max-width: 767px){
+.footer-text {
+    text-align: center;
+}
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 28px;
+}
+.footer-top .title {
+    margin-bottom: 23px;
+}
+
+.list-inline, .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.contact-info>li {
+    color: #6e6e6e;
+    margin-bottom: 14px;
+    white-space: nowrap;
+    clear: both;
+}
+
+.contact-info>li>i {
+    margin-top: 3px;
+    color: #0068e1;
+    color: var(--color-primary);
+    float: left;
+}
+
+.footer-payment {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 767px){
+.footer-payment {
+    margin-top: 15px;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+}
+
+.footer-payment>img {
+    max-height: 30px;
+    max-width: 100%;
+}
+
+.footer-text {
+    line-height: 26px;
+    color: #6e6e6e;
+}
+
+@media screen and (max-width: 767px){
+.footer-text {
+    text-align: center;
+}
+}
+
+.footer-text a {
+    font-weight: 500;
+  
+    color: #002b5c;
+}
+
+.tabfooter{
+    width: 25%;
+    border-right: 0px solid #9f9b9b;
+   
+    
+}
+
+.tabfooter a{
+
+    text-align: center !important;
+}
+
+
+.tabfooter a>i{
+
+   font-size: 30px;
+}
+
+.row > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0;
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+
+.active-link{
+    color:#00bcd4;
+    font-weight: 700;
+}
+
+.count {
+    position: absolute;
+    font-size: 10px;
+    line-height: 20px;
+    top: 8px;
+    height: 18px
+;
+    width: 18px
+;
+    color: #fff;
+    background: #e23e1d;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.whatsappimg{
+    position: absolute;
+    bottom: 65px;
+    right: 10px;
+}

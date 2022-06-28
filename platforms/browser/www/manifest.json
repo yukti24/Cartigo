@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Cartigo",
+  "short_name": "Cartigo",
+  "version": "com.cartigo.app",
+  "description": "A grocery app",
+  "author": "Yukti Choudhary",
+  "icons": [],
+  "orientation": "portrait",
+  "start_url": "index.html"
+}

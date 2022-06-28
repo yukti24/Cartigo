@@ -1,0 +1,46 @@
+
+<section class="account-wrap"><div class="container">
+ 
+  <div class="account-wrap-inner">
+    <app-user-menu type="wish" ></app-user-menu>
+
+
+    <div class="account-right"><div class="panel-wrap"><div class="panel">
+      <div class="panel-header"><h4>My Wishlist</h4></div> <div class="panel-body">
+        <div *ngIf="arrOrder.data !== undefined" class="table-responsive">
+          <table class="table table-borderless my-wishlist-table"><thead>
+          <tr><th>IMAGE</th> <th>PRODUCT NAME</th>
+           <th>PRICE</th> <th>AVAILABILITY</th> 
+           <th>ACTION</th></tr></thead> 
+           <tbody>
+            <tr *ngFor="let order of arrOrder.data">
+
+               <td><div class="product-image">
+             <img (click)="prodDetail(order.slug)" [src]="order.base_image.path" 
+             alt="product-image" class=""></div></td> 
+             <td><a (click)="prodDetail(order.slug)" href="javascript:void(0)" class="product-name">
+      {{order.name}}
+  </a></td>
+   <td><span class="product-price">{{order.selling_price.formatted}} <span *ngIf="order.selling_price.formatted !==order.price.formatted" class="previous-price">{{order.price.formatted}}</span></span></td> 
+   <td>
+     <span *ngIf="order.in_stock" class="badge badge-success">
+      In Stock
+  </span>
+  <span *ngIf="! order.in_stock" class="badge badge-danger">
+    Out of Stock
+</span>
+
+
+</td> <td><button (click)="deleteWishlist(order.id)" class="btn btn-delete"><i class="las la-trash"></i>
+      
+  </button></td></tr></tbody></table></div>
+
+  <div *ngIf="arrOrder.data==undefined" class="empty-message">
+    <h3>You don't have any wishlist.</h3></div>
+</div> 
+  <div class="panel-footer"><!----></div></div></div></div>
+
+
+       </div></div></section>
+
+       <app-footer1></app-footer1>

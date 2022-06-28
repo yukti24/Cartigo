@@ -1,0 +1,36 @@
+.order-complete {
+    display: -webkit-box;
+    display: flex;
+    padding: 40px 0;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.order-complete .checkmark {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 23px;
+    border-radius: 50%;
+    stroke: #0068e1;
+    stroke: var(--color-primary);
+    stroke-width: 2.5;
+    stroke-miterlimit: 10;
+    -webkit-animation: fill .4s ease-in-out .4s forwards,scale .3s ease-in-out .9s both;
+    animation: fill .4s ease-in-out .4s forwards,scale .3s ease-in-out .9s both;
+}
+
+.order-complete .checkmark-check {
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation: stroke .3s cubic-bezier(.65,0,.45,1) .8s forwards;
+    animation: stroke .3s cubic-bezier(.65,0,.45,1) .8s forwards;
+}

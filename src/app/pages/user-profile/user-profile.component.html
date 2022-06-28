@@ -1,0 +1,176 @@
+<section class="account-wrap"><div class="container">
+ 
+  <div class="account-wrap-inner">
+    <app-user-menu  type="profile"></app-user-menu>
+ 
+<div class="account-right">
+  <div class="panel-wrap"><div class="panel">
+    <div class="panel-header"><h4>My Profile</h4>
+    </div> <div class="panel-body">
+      <div class="my-profile">
+      <!--   <form method="POST" action="https://cartigo.in/account/profile">
+          <input type="hidden" name="_token" value="KMlkaaBPDzg5OnjrQ4HZfJxlcDGAVWEpcwTwRGNg"> 
+          <input type="hidden" name="_method" value="put"> 
+          <div class="row"><div class="col-md-9"><div class="form-group">
+            <label for="email">
+      Email<span>*</span></label>
+       <input type="text" name="email" [value]="arrUser.email" id="email" class="form-control"></div></div> 
+       <div class="col-md-9"><div class="form-group"><label for="phone">
+      Phone<span>*</span></label>
+       <input type="text" name="phone" [value]="arrUser.phone" id="phone" class="form-control"></div></div>
+        <div class="col-md-9"><div class="form-group"><label for="first-name">
+      First Name<span>*</span></label>
+       <input type="text" name="first_name" [value]="arrUser.first_name" id="first-name" class="form-control"></div></div> 
+       <div class="col-md-9"><div class="form-group"><label for="last-name">
+      Last Name<span>*</span></label> 
+      <input type="text" name="last_name" [value]="arrUser.last_name" id="last-name" class="form-control"></div></div> 
+      <div class="col-md-9"><div class="form-group"><label for="password">
+      Password
+  </label> <input type="password" name="password" id="password" class="form-control"></div></div>
+   <div class="col-md-9"><div class="form-group"><label for="confirm-password">
+      Confirm Password
+  </label> 
+  <input type="password" name="password_confirmation" id="confirm-password" class="form-control"></div>
+</div></div> <button type="submit" data-loading="" class="btn btn-lg btn-primary btn-save-changes">
+SAVE CHANGES
+</button></form> -->
+
+
+
+
+
+<form class=" form_main" [formGroup]="form" (ngSubmit)="onSubmit()">
+           
+  <div *ngIf="isErr" style="margin: 20px;
+  padding: 10px;" class="alert1 alert-danger container mt-4">
+    {{errormsg}}</div>
+           
+    <div *ngIf="isSuccess" style="margin: 20px;
+    padding: 10px;" class="alert1 alert-success container mt-4">
+      {{succmsg}}</div>
+             
+  
+  <div class="form-group">
+    <label for="password">Referal Code<span></span></label> 
+    <b>
+      {{arrUser.referalcode}}
+    </b>
+
+    
+  </div>
+  
+              <div class="form-group">
+                <label for="password">Email<span>*</span></label> 
+                <input
+                type="text"
+                [(ngModel)]="arrUser.email" 
+                placeholder="email "
+                formControlName="email"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+              />
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+                <div *ngIf="f.email.errors.pattern">enter valid email</div>
+              </div>
+                 
+              
+              </div>
+             
+              <div class="form-group">
+                <label for="password">Phone<span>*</span></label> 
+                <input
+                type="text"
+                [(ngModel)]="arrUser.phone" 
+                placeholder="phone"
+                formControlName="phone"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"
+              />
+              <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                <div *ngIf="f.phone.errors.required">Phone is required</div>
+                <div *ngIf="f.phone.errors.pattern">enter valid phone</div>
+              </div>
+                 
+              </div>
+
+              <div class="form-group">
+                <label for="password">First Name<span>*</span></label>   
+               
+            <input
+            type="text"
+            placeholder="first name"
+            [(ngModel)]="arrUser.first_name" 
+            formControlName="firstname"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }"
+          />
+          <div *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
+            <div *ngIf="f.firstname.errors.required">
+              First Name is required
+            </div>
+            <div *ngIf="f.firstname.errors.pattern">enter valid first name</div>
+          </div>
+              </div>
+  
+  
+              <div class="form-group">
+                <label for="password">Last Name<span>*</span></label> 
+                <input
+                type="text"
+                [(ngModel)]="arrUser.last_name" 
+                formControlName="lastname" placeholder="last name"
+                class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }"
+              />
+              <div *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
+                <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                <div *ngIf="f.lastname.errors.pattern">enter valid last name</div>
+              </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password<span>*</span></label> 
+                <input type="password" formControlName="password"  class="form-control" autocomplete="off"
+                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }" >
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">Password is required</div>
+                  
+              </div>
+              </div>
+
+              <div class="form-group">
+                <label for="repassword">Confirm Password<span>*</span></label> 
+                <input type="password" formControlName="repassword"  class="form-control" autocomplete="off"
+                 [ngClass]="{ 'is-invalid': submitted  }" >
+                <div *ngIf="submitted && f.repassword.errors" class="invalid-feedback">
+                  <div *ngIf="f.repassword.errors.required">Confirm Password is required</div>
+                  
+              </div>
+              <div class="invalid-feedback" *ngIf="iserrcnf">Confirm Password and new password are not same</div>
+
+              </div>
+  
+            
+           
+             
+           <input
+           name="submit"
+           class="btn btn-lg btn-primary btn-save-changes"
+           accesskey="l"
+           value="SAVE CHANGES"
+           tabindex="3"
+           type="submit"
+         />
+
+
+  
+          </form>
+
+
+
+</div></div></div></div></div>
+
+</div></div></section>
+
+<app-footer1></app-footer1>

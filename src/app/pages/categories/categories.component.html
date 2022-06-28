@@ -1,0 +1,44 @@
+<section class="all-brands-wrap">
+  <ngx-pull-to-refresh
+	spinnerColor="#ff0000"
+  spinnerSize="50"
+	distanceForRefresh="40"
+	[isEnable]="true"
+	[targetElement]="targetElement"
+	(refresh)="myRefreshEvent($event, 'refresh')"
+	
+	style="display:block;height:100%;">
+  <div style="height: 30px"></div>
+</ngx-pull-to-refresh>
+  <div class="container">
+    <div class="content-left">
+<h4  *ngIf="issubcat">
+
+  <span (click)="back()" class=" material-icons">arrow_back</span>
+  
+   <a class="blacktext" >
+        {{title}}
+      </a>
+</h4>
+     
+
+      <h4 *ngIf="!issubcat">{{title}}</h4>
+    
+    </div>
+    <div class="all-brands">
+      <div style="position: relative;" class="all-brands-inner">
+        <ngx-spinner bdColor = "#eeeeee73" size = "default" color = "#fff" type = "ball-clip-rotate" [fullScreen] = "true"><p style="color: #000" > Loading... </p></ngx-spinner>
+
+        <ul class="tabs featured-categories-tabs">
+          <li *ngFor="let navitem of arrCategory" class="tab-item ">
+            <div (click)="getProducts(navitem.slug,navitem.name,navitem.id)"
+            class="featured-category-image"><img 
+            [src]="navitem.logo.path" alt="category logo" 
+            class=""></div>
+             <span class="featured-category-name">{{navitem.name}}</span>
+        </li>
+</ul>
+
+      </div></div></div></section>
+
+      <app-footer1></app-footer1>

@@ -1,0 +1,66 @@
+.my-profile {
+    padding: 35px 20px 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 9px;
+}
+
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+.form-control {
+    font-size: 14px;
+    height: 45px;
+    padding: 10px 15px;
+    border-color: #ebebeb;
+    border-radius: 2px;
+    -webkit-transition: .15s ease-in-out;
+    transition: .15s ease-in-out;
+}
+
+.form-group label>span {
+    margin-left: 4px;
+    color: #e23e1d;
+}
+
+.row > * {
+    width: 95%;
+    padding-left: 20px;
+}
+
+.btn-primary, .btn-primary:focus {
+    background: #002b5c;
+    
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    margin-top: 5px;
+    padding: 12px 50px;
+}
+
+.my-profile .btn-save-changes {
+    width: 100%;
+    font-size: 15px;
+}

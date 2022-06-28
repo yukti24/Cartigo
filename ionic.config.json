@@ -1,0 +1,12 @@
+{
+  "defaultProject": "simple-side-nav",
+  "projects": {
+    "simple-side-nav": {
+      "name": "simple-side-nav",
+      "integrations": {
+        "cordova": {}
+      },
+      "type": "angular"
+    }
+  }
+}

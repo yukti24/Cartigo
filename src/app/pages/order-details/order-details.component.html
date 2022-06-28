@@ -1,0 +1,51 @@
+
+<div class="container"><div class="breadcrumb"><ul class="list-inline"><li>
+  <a routerLink="/home">Home</a></li> <li><a routerLink="/dashboard">My Account</a></li> 
+  <li><a routerLink="/myorders">My Orders</a></li> 
+  <li class="active">View Order</li></ul></div></div>
+  <ngx-spinner  bdColor = "#eeeeee73" size = "default" color = "#000" type = "ball-clip-rotate" [fullScreen] = "false"><p style="color: black" >  Loading... </p></ngx-spinner>
+
+  <section class="order-details-wrap"><div class="container">
+    <div class="order-details-top"><h3 class="section-title">View Order</h3> 
+    <div class="row"><div class="col-lg-6 col-sm-18"><div class="order-information">
+    <h4>Order Information</h4> <ul class="list-inline order-information-list"><li>
+     <label>Phone:</label> <span>{{arrOrder.customer_phone}}</span></li> <li><label>Email:</label>
+     <span>{{arrOrder.customer_email}}</span></li> <li><label>Date:</label> <span> {{ arrOrder.created_at | date: "mediumDate" }}</span></li>
+     <li><label>Shipping Method:</label> <span>{{arrOrder.shipping_method}}</span></li> <li><label>Payment Method:</label>
+     <span>{{arrOrder.payment_method}}</span></li></ul></div></div> <div class="col-lg-6 col-sm-9">
+      <div class="order-billing-details"><h4>Billing Address</h4> <address><span>{{arrOrder.billing_first_name}} {{arrOrder.billing_last_name}}</span>
+      <span>{{arrOrder.billing_address_1}}</span> <span>{{arrOrder.billing_city}}, {{arrOrder.billing_state_name}} {{arrOrder.billing_zip}}</span> 
+    <span>{{arrOrder.billing_city}}</span></address></div></div> <div class="col-lg-6 col-sm-9">
+      <div class="order-shipping-details"><h4>Shipping Address</h4> <address><span> {{arrOrder.shipping_first_name}} {{arrOrder.shipping_last_name}} </span> 
+     <span>{{arrOrder.shipping_address_1}}</span>  <span *ngIf="arrOrder.shipping_address_2">{{arrOrder.shipping_address_2}}</span> <span>{{arrOrder.shipping_city}}, {{arrOrder.shipping_state}} {{arrOrder.shipping_zip}}</span> 
+     <span>{{arrOrder.shipping_country}}</span></address></div></div></div></div> <div class="order-details-middle">
+     <div class="table-responsive"><table class="table table-borderless order-details-table">
+      <thead><tr><th>PRODUCT NAME</th> <th>UNIT PRICE</th> <th>QUANTITY</th> 
+       <th>LINE TOTAL</th></tr></thead> <tbody>
+        <tr *ngFor="let prod of arrOrder.products">
+           <td>
+      <a href="javascript:void(0)" 
+      class="product-name">
+ {{prod.product.name}}
+</a>
+<ul *ngIf="prod.options.length>0" class="list-inline product-options">
+  <li><label>{{prod.options[0].option.name}}:</label> {{prod.options[0].value}}
+</li></ul>
+
+
+</td> <td> <label>UNIT PRICE</label> <span class="product-price">
+    {{prod.unit_price.formatted}}
+</span></td> <td><label>QUANTITY</label> <span class="quantity">
+    {{prod.qty}}
+</span></td> <td><label>LINE TOTAL</label> <span class="product-price">
+    {{prod.line_total.formatted}}
+</span></td></tr></tbody></table></div></div> <div class="order-details-bottom">
+  <ul class="list-inline order-summary-list"><li><label>Subtotal</label> <span class="price-amount">
+   {{arrOrder.sub_total.formatted}}
+</span></li> <li><label>Flat Rate</label> <span class="price-amount">
+  {{arrOrder.shipping_cost.formatted}}
+</span></li></ul> <div class="order-summary-total"><label>Total</label> <span class="total-price">
+  {{arrOrder.total.formatted}}
+</span></div></div></div></section>
+
+<app-footer1></app-footer1>

@@ -1,0 +1,32 @@
+
+<div *ngFor="let prod of arrProd" >
+<div class="daily-deals-inner slick-slides slick-current slick-active" style="width: 328px;" data-slick-index="0" aria-hidden="false">
+  <div class="daily-deals-top"><a href="javascript:void(0)"  (click)="prodDetail(prod.slug)"class="product-image" tabindex="0">
+  <img [src]="prod.base_image.path" alt="product-image" class=""></a></div> 
+  <a href="javascript:void(0)" (click)="prodDetail(prod.slug)"  class="product-name" tabindex="0">
+  <h6>{{prod.name}}</h6></a> <div class="product-info">
+    <div class="product-price">{{prod.selling_price.formatted}} <span *ngIf="prod.selling_price.formatted !== prod.price.formatted " class="previous-price">{{prod.price.formatted}} </span></div> 
+  <div class="product-rating"><div class="back-stars"><i class="las la-star"></i> <i class="las la-star"></i> 
+  <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i> <div class="front-stars" style="width: 0%;">
+    <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i> <i class="las la-star"></i> 
+    <i class="las la-star"></i></div></div> <span class="rating-count">(0)</span></div></div> 
+    <div class="daily-deals-countdown clearfix is-countdown"><span class="countdown-row countdown-show4">
+    <span class="countdown-section"><span id="daydiv" class="countdown-amount">{{daystr}}</span><span class="countdown-period">Days</span></span>
+    <span class="countdown-section"><span id="hrdiv"  class="countdown-amount">{{hrstr}}</span><span class="countdown-period">Hours</span></span>
+    <span class="countdown-section"><span id="mindiv"  class="countdown-amount">{{minstr}}</span><span class="countdown-period">Minutes</span></span>
+    <span class="countdown-section"><span id="secdiv"  class="countdown-amount">{{secstr}}</span><span class="countdown-period">Seconds</span></span></span></div> 
+    <div class="deal-progress"><div class="deal-stock"><div class="stock-available">
+  Available:
+  <span>{{prod.pivot.qty}}</span></div> <div class="stock-sold">
+  Sold:
+  <span>{{prod.pivot.sold}}</span></div></div> <div class="progress">
+    <div class="progress-bar" id="demo" ></div>
+    <div class="wrapper">
+      <div class="pie spinner"></div>
+      <div class="pie filler"></div>
+      <div class="mask"></div>
+    </div>
+  
+  
+  </div></div></div>
+  </div>

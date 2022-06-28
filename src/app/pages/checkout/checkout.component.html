@@ -1,0 +1,141 @@
+<section class="checkout-wrap"><div class="container">
+  <div class="checkout"><div class="checkout-inner">
+  <div class="checkout-left"><div class="checkout-form">
+  <input type="hidden" name="customer_email" value="aniket.3333@gmail.com"> 
+  <div class="billing-details"><h4 class="section-title">Billing Details</h4> 
+  <div class="select-address">
+    <div class="form-groupb">
+    <div *ngFor="let address of arrAddress; let i=index" class="form-radio">
+  <input type="radio" name="billadd" style="display: none;" [value]="false" id="billing-address-{{i}}" > 
+  <input type="radio" value="false" [checked]="selbillingaddress==i" (click)="chkOption(i)" id="chk{{i}}">
+
+  <label for="billing-address-1"><span>{{address.full_name}}</span> 
+    <span>{{address.address_1}}</span> <!----> 
+    <span>{{address.address_2}}</span> 
+  
+    <span>{{address.city}}, {{address.state_name}} {{address.zip}}</span> <span>{{address.country_name}}</span></label></div>
+     <!----></div></div> <div class="add-new-address-wrap">
+       <button type="button" (click)="toggleAddress()" class="btn btn-add-new-address">
+     + ADD NEW ADDRESS
+      </button> 
+  <div class="add-new-address-form" *ngIf="showBillAddressForm">
+    <div class="row"><div class="col-md-9">
+    <div class="form-group">
+      <label for="billing-first-name">First Name<span>*</span></label>
+   <input type="text" name="billing[first_name]" id="billing-first-name" class="form-control"> <!----></div></div> 
+   <div class="col-md-9">
+     <div class="form-group"><label for="billing-last-name">Last Name<span>*</span></label> 
+  <input type="text" name="billing[last_name]" id="billing-last-name" class="form-control"></div> <!----></div> 
+  <div class="col-md-18"><div class="form-group"><label for="billing-address-1">
+  Street Address<span>*</span></label>
+   <input type="text" name="billing[address_1]" id="billing-address-1" placeholder="Address Line 1" class="form-control"> <!----></div> 
+   <div class="form-group"><input type="text" name="billing[address_2]" placeholder="Address Line 2 (optional)" class="form-control"></div></div>
+  <div class="col-md-9"><div class="form-group"><label for="billing-city">City<span>*</span></label> 
+  <input type="text" name="billing[city]" id="billing-city" class="form-control"> <!----></div></div> 
+  <div class="col-md-9"><div class="form-group"><label for="billing-zip">Postcode / ZIP<span>*</span></label> 
+  <input type="text" name="billing[zip]" id="billing-zip" class="form-control"> <!----></div></div> <div class="col-md-9"><div class="form-group"><label for="billing-country">
+  Country<span>*</span></label> <select name="billing[country]" id="billing-country" class="form-control arrow-black"><option value="IN">India</option></select> <!----></div></div> <div class="col-md-9"><div class="form-group"><label for="billing-state">
+  State / Province<span>*</span></label> 
+  <input type="text" name="billing[state]" id="billing-state" class="form-control"> <!----></div></div></div></div></div></div>
+   <div class="shipping-details"><div class="row"><div class="col-md-18"><div class="form-group ship-to-different-address-label">
+    <div class="form-check"><input (click)="toggleShipDiffAddress()" class="mt5" type="checkbox" name="ship_to_a_different_address" id="ship-to-different-address"> <label for="ship-to-different-address" class="form-check-label">
+Ship to a different address
+</label></div></div>
+ <div class="ship-to-different-address-form"  *ngIf="shipdiffAdd" ><h4 class="section-title">Shipping Details</h4> 
+  <div class="select-address"><div class="form-group">
+    <div *ngFor="let address of arrAddress; let i=index"  class="form-radio">
+      <input type="radio" value="false" [checked]="selShippingaddress==i" (click)="chkShippOption(i)" id="chkshipp{{i}}">
+
+      <label for="billing-address-1"><span>{{address.full_name}}</span> 
+        <span>{{address.address_1}}</span> <!----> 
+        <span>{{address.address_2}}</span> 
+      
+        <span>{{address.city}}, {{address.state_name}} {{address.zip}}</span> <span>{{address.country_name}}</span></label></div>
+        <!----></div></div>
+       <div class="add-new-address-wrap"><button type="button"  (click)="toggleAddressShip()"class="btn btn-add-new-address">
++ ADD NEW ADDRESS
+</button> <div class="add-new-address-form" style="display: none;"><div class="row"><div class="col-md-9"><div class="form-group"><label for="shipping-first-name">
+              First Name<span>*</span></label> <input type="text" name="shipping[first_name]" id="shipping-first-name" class="form-control"> <!----></div></div> <div class="col-md-9"><div class="form-group"><label for="shipping-last-name">
+              Last Name<span>*</span></label> <input type="text" name="shipping[last_name]" id="shipping-last-name" class="form-control"> <!----></div></div> <div class="col-md-18"><div class="form-group"><label for="shipping-address-1">
+              Street Address<span>*</span></label> <input type="text" name="shipping[address_1]" id="shipping-address-1" placeholder="Address Line 1" class="form-control"> <!----></div> <div class="form-group">
+                <input type="text" name="shipping[address_2]" placeholder="Address Line 2 (optional)" class="form-control"></div></div> <div class="col-md-9"><div class="form-group"><label for="shipping-city">
+              City<span>*</span></label> <input type="text" name="shipping[city]" id="shipping-city" class="form-control"> <!----></div></div> <div class="col-md-9"><div class="form-group"><label for="shipping-zip">
+              Postcode / ZIP<span>*</span></label> <input type="text" name="shipping[zip]" id="shipping-zip" class="form-control"> <!----></div></div> <div class="col-md-9"><div class="form-group"><label for="shipping-country">
+              Country<span>*</span></label> <select name="shipping[country]" id="shipping-country" class="form-control arrow-black"><option value="IN">India</option></select> <!----></div></div> <div class="col-md-9"><div class="form-group"><label for="shipping-state">
+              State / Province<span>*</span></label> <input type="text" name="shipping[state]" id="shipping-state" class="form-control"> <!----></div></div></div></div></div></div></div></div></div> <div class="row"><div class="col-md-18"><div class="form-group order-notes"><label for="order-note">
+Order Note
+</label> 
+<textarea name="order_note" cols="30" rows="4" id="order-note" [(ngModel)]="txtordernote"
+placeholder="Special note for delivery" class="form-control"></textarea>
+</div></div></div></div></div> 
+<div class="checkout-right"><div class="payment-method">
+  <h4 class="title">Payment Method</h4> 
+  <div class="payment-method-form"><div class="form-group">
+    <div  class="form-radio">
+      <input type="radio" style="position: absolute;" name="form.payment_method" (click)="chkCodOption()" id="cod" value="cod"> 
+    <label for="cod">Cash On Delivery</label> 
+    <span class="helper-text">Pay with cash.</span>
+  </div>
+     <!----></div></div></div> 
+    <div id="stripe-card-element" style="display: none;"></div> <!----> <!---->
+     <div  class="coupon-wrap"><div style="display: none;" class="form-group">
+       <div  class="form-input">
+         <input type="text" [(ngModel)]="promocode" placeholder="Enter coupon code" class="form-control"> <!----></div> 
+         <span *ngIf="isCouponerr" class="error-message">{{arrCouponMsg.message}}</span>
+
+         <button type="button"  (click)="addCoupon()" class="btn btn-primary btn-apply-coupon">
+APPLY COUPON
+</button></div> <!----></div></div></div> 
+<aside class="order-summary-wrap"><div class="order-summary">
+  
+<div class="order-summary-top">
+  
+  <ngx-spinner bdColor = "#eeeeee73" size = "default" color = "#fff" type = "ball-clip-rotate" [fullScreen] = "true"><p style="color: #000" > Loading... </p></ngx-spinner>
+
+  <h3 class="section-title">Order Summary</h3>
+<ul class="list-inline cart-item">
+  <li *ngFor="let prod of arrCart.cart.products"><label>
+  <a href="javascript:void(0)" 
+  class="product-name">{{prod.product.name}}</a>
+ <span class="product-quantity">x{{prod.qty}}</span></label> 
+ <span class="price-amount">{{prod.unit_price.formatted}}</span></li>
+</ul></div> 
+ <div class="order-summary-middle">
+   <ul class="list-inline order-summary-list">
+     <li>
+<label>Subtotal</label> <span class="price-amount">
+  ₹{{arrCart.cart.subtotal | number : '1.2-2' }}
+ 
+
+</span></li> 
+<li *ngIf="arrCart.cart.discount.amount>0"><label>
+  Coupon
+
+  <span class="coupon-code">
+    [{{arrCart.cart.promocode}}]
+      <span  (click)="removeCoupon(arrCart.cart.promocode)"  class="btn-remove-coupon">
+        <i class="las la-times"></i></span></span></label> 
+        <span class="price-amount">-{{arrCart.cart.discount.formatted}}</span></li>
+ <!----></ul> 
+<div class="shipping-methods"><h6>Shipping Method</h6> 
+  <div class="form-group">
+    <div *ngFor="let item of arrCart.availableShippingMethods | keyvalue"  class="form-radio">
+      <input type="radio" [checked]="getShippingSel(item.value.name,item.value.cost.amount)" disabled="disabled" name="shipping_method" id="free_shipping" value="free_shipping"> 
+      <label for="free_shipping">{{item.value.label}}</label>
+       <span class="price-amount">{{item.value.cost.formatted}}</span>
+      </div>
+</div></div> 
+<div class="order-summary-total"><label>Total</label> <span class="total-price">₹{{totamt | number : '1.2-2' }}</span></div></div>
+ <div class="order-summary-bottom"><div class="form-group checkout-terms-and-conditions">
+  <div class="form-check"><input class="mt5" type="checkbox" (click)="chkTerms()" id="terms-and-conditions"> 
+  <label for="terms-and-conditions" class="form-check-label">
+I agree to the
+<a routerLink="/terms">
+  Terms &amp; Conditions
+</a></label> <!----></div></div>
+<span *ngIf="ischkerr" class="helper-text alert-danger">Please check cash on delivery.</span>
+
+ <button type="submit" (click)="checkoutOrder()" [disabled]="!ischkTerms" class="btn btn-primary btn-place-order">
+PLACE ORDER
+</button></div></div></aside></div></div></section>
+<app-footer1></app-footer1>
